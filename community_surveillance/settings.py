@@ -25,7 +25,7 @@ SECRET_KEY = '14uix01&0zg%x#6pz(n_#g44*%k+7eya+u_lg_l_cldz7t%^(e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['terraedu.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
