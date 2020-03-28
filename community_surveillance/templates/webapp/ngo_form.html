@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- <section class="jumbotron text-center"> -->
+
+<div class="row">
+
+	<h1>NGO / CBO Survey</h1>
+	<p class="lead text-muted">The recent outbreak of the novel coronavirus (COVID-19) could have a serious impact on our health and livelihood. In this context, all of us could take certain actions to help assess the risk at the community level. As a community-based organization, you could play a critical role to support all the measures that the government and civil society have undertaken. 
+
+	<br/><br/>
+
+	For this, we request you to fill the following form, which contains key details about your organization's presence, area of work and support that you could provide. 
+
+	<br/><br/>
+
+	The form itself takes 10 minutes to fill. Kindly fill this form by 5 April 2020..</p>
+	<br/><br/>
+
+</div>
+  <!-- </section> -->
+
+<div class="row">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Save NGO</button>
+  </form>
+
+</div>
+{% endblock %}
