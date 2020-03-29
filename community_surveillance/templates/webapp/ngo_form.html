@@ -6,29 +6,40 @@
 
 <!-- <section class="jumbotron text-center"> -->
 
-<div class="row">
+	<div class="row">
 
-	<h1>NGO / CBO Survey</h1>
-	<p class="lead text-muted">The recent outbreak of the novel coronavirus (COVID-19) could have a serious impact on our health and livelihood. In this context, all of us could take certain actions to help assess the risk at the community level. As a community-based organization, you could play a critical role to support all the measures that the government and civil society have undertaken. 
+		<h3><br/>Non-profits for Community Surveillance</h3>
+		<p>
+			<br/>
 
-	<br/><br/>
+			COVID-19 has a serious impact on the health and livelihood of the communities you serve.  The need of the hour is reliable data from the ground that supports the current relief activities, along with trusted, established channels that can relay critical information back to the communities (example treatment and testing centres, telephone counselling). 
 
-	For this, we request you to fill the following form, which contains key details about your organization's presence, area of work and support that you could provide. 
+			<br/><br/>
+			If you are a non-profit organisation or a community-based organisation working directly with communities and are keen on action against COVID-19, please fill this form, takes 10 mins.  Being part of this collaboration will require community surveillance if called upon, and access to resources in the form of information and training that will support response to the COVID-19 threat in the communities you are engaged with. 
+			<br/><br/>
 
-	<br/><br/>
+			We want to hear from as many of you, so please disseminate widely.
+			<br/><br/>
 
-	The form itself takes 10 minutes to fill. Kindly fill this form by 5 April 2020..</p>
-	<br/><br/>
+			This form closes on 5 April 2020.
 
-</div>
-  <!-- </section> -->
+			<br/><br/>	
+		</p>
+	</div>
+	<!-- </section> -->
 
-<div class="row">
-  <form method="post" novalidate>
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-success">Save NGO</button>
-  </form>
+	<div class="row">
+		<h5>Please fill the details below:</h5>
+		<br/><br/>
+		<form method="post" novalidate>
+			{% csrf_token %}
+			{{ form|crispy }}
+			<button type="submit" class="btn btn-success">Save NGO</button>
+		</form>
+		<br/><br/>
+	</div>
+	{% endblock %}
 
-</div>
-{% endblock %}
+
+
+

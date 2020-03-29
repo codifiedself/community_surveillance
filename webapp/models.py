@@ -70,8 +70,6 @@ class PincodeLocation(models.Model):
 
 
 
-
-
 class Ngo(AbstractOrganization):
 	name = models.CharField(max_length=100)
 	email = models.EmailField() #non mandatory
@@ -84,20 +82,38 @@ class Ngo(AbstractOrganization):
 	operational_level = models.CharField(max_length=50, choices=OPERATIONAL_LEVEL_CHOICES)
 
 
+	SPECIAL_NEEDS_CHOICES = (
+								('no', 'No, we do not work with any special needs group'),
+								('mental_illness', 'People with mental illness'),
+								('hearing_loss','People with hearing loss'),
+								('physical_disabilities','People with physical disabilities'),
+								('intellectual_disabilities','People with intellectual disabilities'),
+								('aids','People living with HIV/AIDS'),
+								('chronic_illness','People living with chronic illness such as cancer, heart ailments, are immune-compromised'),
+								('elderly','Elderly'),
+								('tribal_population','Tribal population'),
+								('migrants','Migrants and internally displaced'),
+								('hospice_shelters','Hospice/homes/orphanages/shelters'),
+								('homeless','Homeless'),
+								('others','Others')
+							)
+	special_needs_groups = MultiSelectField(choices=SPECIAL_NEEDS_CHOICES, null=True, blank=True)
+
+
 	operational_states = models.ManyToManyField(State)
 	operational_districts = models.ManyToManyField(District)
-	operational_taluks = models.ManyToManyField(Taluk)
+	# operational_taluks = models.ManyToManyField(Taluk)
 
-
-	is_govt_funded = models.BooleanField()
-	govt_programs_contributed_to = models.TextField(blank=True)
-	govt_programs_partnered_with = models.TextField(blank=True)
+	# is_govt_funded = models.BooleanField()
+	# govt_programs_contributed_to = models.TextField(blank=True)
+	# govt_programs_partnered_with = models.TextField(blank=True)
 	population_reach = models.IntegerField()
 
 	REACH_MEDIUM_CHOICES = (('inperson', 'In Person Only'), ('remotely', 'Remote Only via phones'), ('remote_and_inperson', 'Both in Person & Remotely via phones'))
 	medium_of_reach = models.CharField(max_length=30, choices=REACH_MEDIUM_CHOICES)
 
-	staff_details = models.TextField(blank=True)
+	staff_count = models.IntegerField(default=0)
+	# staff_details = models.TextField(blank=True)
 	does_staff_use_phones = models.BooleanField()
 	staff_languages = models.TextField(blank=True)
 
