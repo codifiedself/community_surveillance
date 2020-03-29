@@ -111,14 +111,19 @@ class Ngo(AbstractOrganization):
 	def __str__(self):              # __unicode__ on Python 2
 	    return "%s" % (self.name)
 
+	class Meta:
+		verbose_name = 'NGO'
+
 
 
 
 class NgoUser(AbstractOrganizationUser):
-	pass
+	class Meta:
+		verbose_name = 'NGO User'
 
 class NgoOwner(AbstractOrganizationOwner):
-    pass
+	class Meta:
+		verbose_name = 'NGO Owner'
 
 
 # class NgoForm(ModelForm):
