@@ -35,14 +35,22 @@ class District(models.Model):
     state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):              # __unicode__ on Python 2
-        return "%s (%s)" % (self.name, self.state.name)
+    	if self.state:
+    		return "%s (%s)" % (self.name, self.state.name)
+    	else:
+    		return "%s (No State)" % (self.name)
+
+        
 
 class Taluk(models.Model):
     name = models.CharField(max_length=100)
     district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):              # __unicode__ on Python 2
-        return "%s" % (self.name)
+    	if self.district:
+    		return "%s (District: %s)" % (self.name, self.district.name)
+    	else:
+    		return "%s ()" % (self.name)
 
 class Pincode(models.Model):
 	pincode = models.IntegerField()
