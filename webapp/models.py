@@ -57,7 +57,7 @@ class Pincode(models.Model):
 	taluk = models.ForeignKey(Taluk, on_delete=models.SET_NULL, null=True)
 
 	def __str__(self):              # __unicode__ on Python 2
-	    return "%s" % (self.name)
+	    return "%s" % (self.pincode)
 
 class PincodeLocation(models.Model):
     name = models.CharField(max_length=100)
@@ -75,7 +75,20 @@ class Ngo(AbstractOrganization):
 	email = models.EmailField() #non mandatory
 	phone = models.CharField(max_length=15) #non mandatory
 	primary_contact = models.CharField(max_length=100)
-	work_area = models.CharField(max_length=200)
+
+
+	WORK_AREA_CHOICES = (
+							('health','Health'), 
+							('education', 'Education'), 
+							('nutrition', 'Nutrition'),
+							('disability', 'Disability'), 
+							('wash', 'WASH'), 
+							('livelihoods','Livelihoods'), 
+							('financial_services', 'Financial Services'),
+							('others','Others')
+						)
+
+	work_area = MultiSelectField(choices=WORK_AREA_CHOICES, null=True, blank=True)
 
 
 	OPERATIONAL_LEVEL_CHOICES = (('state', 'State'), ('district', 'District'), ('block', 'Block'), ('city', 'City'), ('taluk', 'Taluk/Tehsil'), ('other', 'Other'))

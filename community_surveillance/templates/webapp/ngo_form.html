@@ -25,12 +25,13 @@
 
 			<br/><br/>	
 		</p>
+		<h5>Please fill the details below:</h5>
 	</div>
 	<!-- </section> -->
 
 	<div class="row">
-		<h5>Please fill the details below:</h5>
-		<br/><br/>
+		
+		
 		<form method="post" novalidate>
 			{% csrf_token %}
 			{{ form|crispy }}
@@ -38,7 +39,7 @@
 		</form>
 		<br/><br/>
 	</div>
-	{% endblock %}
+{% endblock %}
 
 
 

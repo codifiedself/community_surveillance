@@ -38,9 +38,9 @@ class NgoForm(ModelForm):
             'phone': 'Contact Phone Number',
             'work_area': 'Area of work of the organization (Eg. Health, Education, Nutrition, Disability, WASH, Livelihoods, Financial Services etc)',
             'special_needs_groups': 'Does your organization work with any special needs’ group? (Select as many as applies)',
-            'operational_level': 'At what level, does your organization carry out implementation activities?',
-            'operational_states': 'In which states or union territories does your organization carry out implementation activities?',
-            'operational_districts': 'Please list all districts in which your organization has been carrying out implementation activities.',
+            'operational_level': 'At what level, does your organization carry out direct implementation activities?',
+            'operational_states': 'In which states or union territories does your organization carry out direct implementation activities?',
+            'operational_districts': 'Please list all districts in which your organization has been carrying out direct implementation activities.',
             # 'operational_taluks': 'Please list all taluks in which your organization has been carrying out implementation activities.',
             # 'is_govt_funded': 'Select this checkbox if your project receives funding or other resources from national or state government?',
             # 'govt_programs_contributed_to': 'Does your project contribute to the objectives of any government programs? If so, please name the programs, adding if they are state-specific or district-level programs. (For example, if you have your cadre of frontline health workers, training government functionaries, providing community outreach support, community monitoring etc.)',
@@ -50,7 +50,7 @@ class NgoForm(ModelForm):
             'staff_count': 'How many ground-level, frontline staff do you have? (field staff, community outreach workers,  community volunteers)',
             'does_staff_use_phones': 'Does your team use mobile phones/tablets and internet services for day to day project operations? ',
             'staff_languages': 'What languages does your team speak, read and write it? (List All)',
-            'pincode': 'Please provide the postal pincoode of your Organization'
+            'pincode': 'Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function.'
 
 
         }
