@@ -9,6 +9,11 @@ class NgoAdmin(admin.ModelAdmin):
 	# search_fields = ['operational_states']
 	list_filter = ['operational_states', 'operational_districts']
 
+
+class CommodityAdmin(admin.ModelAdmin):
+	list_display = ['name','quantity','unit','price']
+
+
 admin.site.register(Ngo, NgoAdmin)
 admin.site.register(NgoUser)
 admin.site.register(NgoOwner)
@@ -17,5 +22,6 @@ admin.site.register(District)
 admin.site.register(Taluk)
 admin.site.register(Pincode)
 admin.site.register(PincodeLocation)
+admin.site.register(Commodity, CommodityAdmin)
 
 

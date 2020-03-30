@@ -50,7 +50,7 @@ class NgoForm(ModelForm):
             'staff_count': 'How many ground-level, frontline staff do you have? (field staff, community outreach workers,  community volunteers)',
             'does_staff_use_phones': 'Does your team use mobile phones/tablets and internet services for day to day project operations? ',
             'staff_languages': 'What languages does your team speak, read and write it? (List All)',
-            'pincode': 'Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function.'
+            'pincode': 'Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function (comma seperated)'
 
 
         }

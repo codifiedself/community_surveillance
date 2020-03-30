@@ -155,6 +155,19 @@ class NgoOwner(AbstractOrganizationOwner):
 		verbose_name = 'NGO Owner'
 
 
+class Commodity(models.Model):
+    name = models.CharField(max_length=50)
+    quantity = models.IntegerField()
+    unit = models.CharField(max_length=10)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):              # __unicode__ on Python 2
+        return "%s" % (self.name)
+
+    class Meta:
+    	verbose_name_plural = "Commodities"
+
+
 # class NgoForm(ModelForm):
 #     class Meta:
 #         model = Author
