@@ -13,7 +13,7 @@ def ngo_create(request):
 		form = NgoForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('ngo_create')
+			return render(request, 'webapp/form_thankyou.html', {})
 	else:
 		form = NgoForm()
 
