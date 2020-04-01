@@ -11,7 +11,7 @@ class NgoForm(ModelForm):
     class Meta:
         model = Ngo
         fields = ('name', 'primary_contact', 'email', 'phone',  'work_area', 'special_needs_groups', 'operational_level', 'operational_states', 'operational_districts', 
-        	'population_reach', 'medium_of_reach', 'staff_count', 'does_staff_use_phones', 'staff_languages', 'pincode')
+        	'population_reach', 'medium_of_reach', 'staff_count', 'does_staff_use_phones', 'pincode')
     	# 'operational_taluks','is_govt_funded', 'govt_programs_contributed_to', 'govt_programs_partnered_with',   'staff_details'
         widgets = {
         	'operational_states': ModelSelect2MultipleWidget(model=State,
@@ -20,7 +20,7 @@ class NgoForm(ModelForm):
                     								),
         	'operational_districts': ModelSelect2MultipleWidget(model=District,
         												search_fields=['name__icontains'],
-														attrs={'data-placeholder': 'Write the name of the state. You can select multiple.'} 
+														attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
                     								)
         	# 'operational_taluks': ModelSelect2MultipleWidget(model=Taluk,
         	# 											search_fields=['name__icontains'],
@@ -49,7 +49,7 @@ class NgoForm(ModelForm):
             'medium_of_reach': '11. For the people you can reach, can you reach them in-person only or also remotely (via phones)',
             'staff_count': '12. How many ground-level, frontline staff do you have? (field staff, community outreach workers,  community volunteers)',
             'does_staff_use_phones': '13. Does your team use mobile phones/tablets and internet services for day to day project operations? ',
-            'staff_languages': '14. What languages does your team speak, read and write it? (List All)',
+            # 'staff_languages': '14. What languages does your team speak, read and write it? (List All)',
             'pincode': '15. Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function (comma seperated)'
 
 
@@ -57,7 +57,7 @@ class NgoForm(ModelForm):
         help_texts = {
             # 'name': _('Some useful help text.'),
             # 'work_area': 'Eg. Health, Education, Nutrition, Disability, WASH, Livelihoods, Financial Services etc',
-            'operational_level': 'Select one option: State, District, Block, City, Taluk/Tehsil or Other',
+            # 'operational_level': 'Select one option: State, District, Block, City, Taluk/Tehsil or Other',
             'operational_states': 'If your organization is operational is in multiple states, select multiple',
             'operational_districts': 'If your organization is operational in multiple districts, select multiple',
             # 'operational_taluks': 'If your organization is operational is in multiple taluks, select multiple',

@@ -92,7 +92,7 @@ class Ngo(AbstractOrganization):
 
 
 	OPERATIONAL_LEVEL_CHOICES = (('state', 'State'), ('district', 'District'), ('block', 'Block'), ('city', 'City'), ('taluk', 'Taluk/Tehsil'), ('other', 'Other'))
-	operational_level = models.CharField(max_length=50, choices=OPERATIONAL_LEVEL_CHOICES)
+	operational_level = MultiSelectField(choices=OPERATIONAL_LEVEL_CHOICES, null=True, blank=True)
 
 
 	SPECIAL_NEEDS_CHOICES = (
@@ -105,7 +105,10 @@ class Ngo(AbstractOrganization):
 								('chronic_illness','People living with chronic illness such as cancer, heart ailments, are immune-compromised'),
 								('elderly','Elderly'),
 								('tribal_population','Tribal population'),
-								('migrants','Migrants and internally displaced'),
+								('rural_poor','Rural poor'),
+								('urban_poor','Urban poor'),
+								# ('migrants','Migrants and internally displaced'),
+								('migrant_labourers', 'Migrant labourers'),
 								('hospice_shelters','Hospice/homes/orphanages/shelters'),
 								('homeless','Homeless'),
 								('others','Others')
@@ -128,7 +131,7 @@ class Ngo(AbstractOrganization):
 	staff_count = models.IntegerField(default=0)
 	# staff_details = models.TextField(blank=True)
 	does_staff_use_phones = models.BooleanField()
-	staff_languages = models.TextField(blank=True)
+	# staff_languages = models.TextField(blank=True)
 
 	pincode = models.IntegerField(blank=True, null=True)
 

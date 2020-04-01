@@ -4,7 +4,7 @@ from .models import *
 
 class NgoAdmin(admin.ModelAdmin):
 	list_display = ['name', 'primary_contact', 'email', 'phone',  'work_area', 'operational_level', 'population_reach', 'medium_of_reach', 'staff_count',
-    	'does_staff_use_phones', 'staff_languages', 'pincode']
+    	'does_staff_use_phones', 'pincode']
 
 	# search_fields = ['operational_states']
 	list_filter = ['operational_states', 'operational_districts']
