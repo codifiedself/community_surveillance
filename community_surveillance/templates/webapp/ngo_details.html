@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+    <h3><br/>State & District-wise data of NGOs</h3>
+  </div>
+</div>
+
+
+<div class="row">
+<div class="col-12">
+<div class="accordion" id="accordionExample">
+{% for key, value in all_data.items %}
+  <div class="card">
+    <div class="" id="heading{{forloop.counter}}">
+      <h2 class="mb-0">
+        <button class="btn" style="width: 100%;text-align: left;" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+
+          <span class="btn-link"><b>{{key}}</b></span> <br/> 
+          <b style="color:#333">Total NGOs</b>: {{value.ngo_count}} <br/>
+          <b style="color:#333">Population reach</b>: {{value.population_reach}} &nbsp;&nbsp;&nbsp;&nbsp; 
+          <b style="color:#333">Staff count</b>: {{value.staff_count}}
+        </button>
+
+      </h2>
+
+    </div>
+
+    <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample" >
+      <div class="card-body">
+        <ul class="list-group mb-3">
+          <li class="list-group-item"><a href="" class="btn-link"> See the list of ALL NGOs in {{key}} </a></li>
+          {% for district in value.districts %}
+          <li class="list-group-item">
+              <b>{{district.0}}</b> <br/>
+            Total NGOs: {{district.1}} <br/>
+            Population reach: {{district.2}} &nbsp;&nbsp;&nbsp;&nbsp; 
+            Staff count: {{district.3}} <br/>
+            <a href="" class="btn-link"> See the list of NGOs in {{district.0}} </a>
+
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+
+</div>
+
+
+</div>
+
+{% endblock %}
