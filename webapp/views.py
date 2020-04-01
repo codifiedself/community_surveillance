@@ -22,6 +22,16 @@ def ngo_create(request):
 	return render(request, 'webapp/ngo_form.html',{'form': form})
 
 
+# class ListView(ListView):
+# 	template_name = 'book-list.html'
+# 	context_object_name = 'books'
+# 	paginate_by = 10
+# 	ordering = ['-created']
+
+#     def get_queryset(self):
+#         return Book.objects.filter(created_by=self.request.user)
+
+
 def ngo_details(request):
 	#create a dictionary which has State Name : { NGO COUNT : "", Districts : [list of districts with their name and NGO counts] }
 	all_data = {}

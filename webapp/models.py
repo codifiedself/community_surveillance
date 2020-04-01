@@ -159,7 +159,7 @@ class Commodity(models.Model):
     name = models.CharField(max_length=50)
     quantity = models.IntegerField()
     unit = models.CharField(max_length=10)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.IntegerField()#(max_digits=6, decimal_places=2)
 
     def __str__(self):              # __unicode__ on Python 2
         return "%s" % (self.name)
