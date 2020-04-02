@@ -21,7 +21,8 @@ class NgoForm(ModelForm):
         	'operational_districts': ModelSelect2MultipleWidget(model=District,
         												search_fields=['name__icontains'],
 														attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
-                    								)
+                    								),
+            'medium_of_reach': forms.RadioSelect()
         	# 'operational_taluks': ModelSelect2MultipleWidget(model=Taluk,
         	# 											search_fields=['name__icontains'],
 									# 					attrs={'data-placeholder': 'Write the name of the state. You can select multiple.'} 
