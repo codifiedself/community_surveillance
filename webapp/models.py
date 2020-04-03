@@ -123,7 +123,7 @@ class Ngo(AbstractOrganization):
 	# is_govt_funded = models.BooleanField()
 	# govt_programs_contributed_to = models.TextField(blank=True)
 	# govt_programs_partnered_with = models.TextField(blank=True)
-	population_reach = models.IntegerField()
+	population_reach = models.IntegerField(default=0)
 
 	REACH_MEDIUM_CHOICES = (('inperson', 'In Person Only'), ('remotely', 'Remote Only via phones'), ('remote_and_inperson', 'Both in Person & Remotely via phones'))
 	medium_of_reach = models.CharField(max_length=30, choices=REACH_MEDIUM_CHOICES, blank=False, default="")
