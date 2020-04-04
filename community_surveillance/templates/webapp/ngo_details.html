@@ -46,15 +46,24 @@
 
     <ul class="list-group list-group-flush">
       {% for key, value in all_data.items %}
-        <script type="text/javascript">
-          states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
-        </script>
 
         <li class="list-group-item">
-          <button class="btn" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+          <button class="btn" id="statelink_{{forloop.counter}}" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
             <span class="btn-link">{{key|title}} ({{value.ngo_count}})</span> <br/> 
           </button>
         </li>
+
+        <script type="text/javascript">
+          states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
+
+          $('#statelink_{{forloop.counter}}').bind("click", function() {
+            onStatLinkClick('{{key}}');
+            $(".district_data").hide();
+            $("#collapse{{forloop.counter}}").show();
+          })
+        </script>
+
+
       {% endfor %}
     </ul>
   </div>
@@ -65,17 +74,31 @@
 
 
   <div class="col-3 mt-7">
-    <ul class="list-group">
       {% for key, value in all_data.items %}
-      <li class="list-group-item">
-        <div class="collapse" id="collapse{{forloop.counter}}">
-          <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
+        <div class="collapse district_data" id="collapse{{forloop.counter}}">
+            <div class="card card-body mb-4 state_data">
+                <h6>{{key}}</h6> 
+              Total NGOs: {{value.ngo_count}} <br/>
+              Population reach: {{value.population_reach}} <br/> 
+              Staff count: {{value.staff_count}} <br/>
+              <a href="" class="btn-link"> See all NGOs in {{key}} </a>
+            </div>
+            <h6>&nbsp;District wise details</h6>
+
+            {% for district in value.districts %}
+            <div class="card card-body mb-2">
+                <h6>{{district.0}}</h6> 
+              Total NGOs: {{district.1}} <br/>
+              Population reach: {{district.2}} <br/> 
+              Staff count: {{district.3}} <br/>
+              <a href="" class="btn-link"> See all NGOs in {{district.0}} </a>
+            </div>
+            {% endfor %} 
         </div>
-      </li>
+      
       {% endfor %}
-    </ul>
+
+  
   </div>
 </div>
 

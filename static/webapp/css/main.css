@@ -83,3 +83,12 @@ color: #fff;
 .mt-7 {
     margin-top: 7rem !important;
 }
+
+.district_data .card-body {
+    font-size: 13px;
+}
+
+.state_data {
+    box-shadow: 0px 0px 5px #eee;
+    border: 2px solid #ddd;
+}

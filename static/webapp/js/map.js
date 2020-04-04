@@ -47,7 +47,10 @@
     map.fitBounds(e.target.getBounds());
   }
 
+  var layer_list = {};
+
   function onEachFeature(feature, layer) {
+  	layer_list[feature.properties.ST_NM] = layer;
     layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.ST_NM + '</b></span> <br/> \
       <b style="color:#333">Total NGOs</b>:' + feature.properties.ngo_count + '<br/>\
       <b style="color:#333">Population reach</b>:' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
@@ -77,3 +80,8 @@ var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
 var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 12, attribution: osmAttrib}); 
 map.addLayer(osm);  
+
+
+function onStatLinkClick(stateName){
+	map.fitBounds(layer_list[stateName].getBounds());
+}
