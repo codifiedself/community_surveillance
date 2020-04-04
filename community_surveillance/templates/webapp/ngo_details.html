@@ -9,13 +9,12 @@
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 
 
-
 <style type="text/css">  
-#mapIndia1 { 
+  #mapIndia1 { 
     margin: auto;
     height: 90vh; 
     width: 560px;
-}
+  }
 
 </style>
 
@@ -24,134 +23,64 @@
 <script type="text/javascript">
   var states_geojson = [];
 </script>
-
+<!-- 
 <div class="row">
   <div class="col-12 mt-3 mb-3">
-
     <h5 style="text-align: center;">State & District-wise data of NGOs</h5>
   </div>
-</div>
+</div> -->
 
 
 <div class="row">
-<div class="col-3">
 
-<ul class="list-group list-group-flush">
-
-  {% for key, value in all_data.items %}
-    <script type="text/javascript">
-      states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
-    </script>
-    <li class="list-group-item" style="padding: .25rem 1.25rem .25rem 0">
-      <button class="btn" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-        <span class="btn-link"><h6>{{key|title}} ({{value.ngo_count}})</h6></span> <br/> 
-      </button>
-    </li>
-  {% endfor %}
-</ul>
-</div>
- 
-<div class="col-6">
-  <div id="mapIndia1"></div>
-</div>
+  <div class="col-md-3 left-bar">
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <h5>State-wise NGO data</h5>
+    <p class="description">Click on any state below to get its NGO data on the right side</p>
 
 
-<div class="col-3">
-  <ul class="list-group">
-    {% for key, value in all_data.items %}
-    <li class="list-group-item">
-      <div class="collapse" id="collapse{{forloop.counter}}">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    <ul class="list-group list-group-flush">
+      {% for key, value in all_data.items %}
+        <script type="text/javascript">
+          states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
+        </script>
+
+        <li class="list-group-item">
+          <button class="btn" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+            <span class="btn-link">{{key|title}} ({{value.ngo_count}})</span> <br/> 
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="col-6 mt-7">
+    <div id="mapIndia1"></div>
+  </div>
+
+
+  <div class="col-3 mt-7">
+    <ul class="list-group">
+      {% for key, value in all_data.items %}
+      <li class="list-group-item">
+        <div class="collapse" id="collapse{{forloop.counter}}">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-</div>
-
-<script>
-
-var geojson;
-
-function getStateColorByNGO(d) {
-    return d > 100 ? '#800026' :
-           d > 50  ? '#BD0026' :
-           d > 20  ? '#E31A1C' :
-           d > 10  ? '#FC4E2A' :
-           d > 5   ? '#FD8D3C' :
-           d > 2   ? '#FEB24C' :
-           d > 0  ? '#FED976' :
-                      '#FFEDA0';
-}
-
-function style_states1(feature) {
-  return {
-    fillColor: getStateColorByNGO(feature.properties.ngo_count),
-      weight: 1,
-      opacity: 1,
-      color: 'grey',
-      dashArray: '0',
-      fillOpacity: 1
-    };
-}
 
 
-function highlightFeature(e) {
-    var layer = e.target;
+<script type="text/javascript" src="{% static 'webapp/js/map.js' %}"></script>
 
-    layer.setStyle({
-        weight: 5,
-        color: '#666',
-        dashArray: '',
-        fillOpacity: 0.7
-    });
-
-    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
-    }
-}
-
-function resetHighlight(e) {
-    geojson.resetStyle(e.target);
-}
-
-function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
-}
-
-function onEachFeature(feature, layer) {
-  layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.ST_NM + '</b></span> <br/> \
-            <b style="color:#333">Total NGOs</b>:' + feature.properties.ngo_count + '<br/>\
-            <b style="color:#333">Population reach</b>:' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
-            <b style="color:#333">Staff count</b>:'+ feature.properties.staff_count);
-
-
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        // click: zoomToFeature
-    });
-}
-
-var map = L.map('mapIndia1',{zoomSnap: .25}).setView([22.805, 82.0], 4.50);
-// Blank Layer to get us started
-var myLayer = L.geoJSON().addTo(map);
-
-
-geojson = L.geoJson(states_geojson, {
-    style: style_states1,
-    onEachFeature: onEachFeature
-  }).addTo(map);
-
-
-// Add OSM tile layer with correct attribution
-var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-var osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
-var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 12, attribution: osmAttrib}); 
-map.addLayer(osm);  
-
-</script>
 
 {% endblock %}

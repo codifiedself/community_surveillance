@@ -45,8 +45,7 @@ nav a.selected {
 }
 
 .left-bar .description {
-
-	    font-size: 14px;
+	font-size: 14px;
     font-weight: 300;
     line-height: 22px;
     font-style: normal;
@@ -69,4 +68,18 @@ nav a.selected {
 .btn-pink:hover {
 color: #fff;
     background: #BC0F62;
+}
+
+.left-bar .list-group-item {
+	padding: .25rem 1.25rem .25rem 0;
+	font-size: 12px;
+}
+
+.left-bar .list-group-item .btn-link {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.mt-7 {
+    margin-top: 7rem !important;
 }
