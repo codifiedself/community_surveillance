@@ -1,0 +1,72 @@
+body {
+	font-family: Montserrat;
+	font-weight: 400;
+	font-size: 15px;
+}
+
+.logo {
+	height:60px;
+}
+
+nav a {
+    color: #004892;
+    font-size: 12px
+}
+
+nav a.selected {
+    font-weight: 500;
+    color: white;
+    padding: 5px;
+    background: #004892;
+    border-radius: 4px;
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.dots span.dot {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    background: #004892;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+
+.left-bar h4 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 33px;
+}
+
+.left-bar .description {
+
+	    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    font-style: normal;
+    margin-top: 10px;
+    color: #084a90;
+}
+
+
+
+.btn-pink {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    background: #EC126D;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn-pink:hover {
+color: #fff;
+    background: #BC0F62;
+}

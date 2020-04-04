@@ -10,6 +10,7 @@ urlpatterns = [
     path('ngo/create/', ngo_create, name='ngo_create'),
     path('ngo/details/', ngo_details, name='ngo_details'),
     path('supplies_estimator', supplies_estimator, name='supplies_estimator'),
+    path('', index, name='index'),
 
 ]
 

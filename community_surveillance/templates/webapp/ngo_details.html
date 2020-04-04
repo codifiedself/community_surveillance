@@ -5,6 +5,7 @@
 {% block content %}
 
 <link  rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 
 
@@ -13,84 +14,62 @@
 #mapIndia1 { 
     margin: auto;
     height: 90vh; 
-    width: 730px;
+    width: 560px;
 }
+
 </style>
+
 <script type="text/javascript" src="{% static 'webapp/js/states.js' %}"></script>
+
 <script type="text/javascript">
   var states_geojson = [];
 </script>
 
-  <div class="row">
-    <div class="col-12">
-    <h3><br/>State & District-wise data of NGOs</h3>
+<div class="row">
+  <div class="col-12 mt-3 mb-3">
+
+    <h5 style="text-align: center;">State & District-wise data of NGOs</h5>
   </div>
 </div>
 
 
 <div class="row">
-<div class="col-4">
-<div class="accordion" id="accordionExample">
+<div class="col-3">
 
-
+<ul class="list-group list-group-flush">
 
   {% for key, value in all_data.items %}
-
-  <script type="text/javascript">
-  states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
-</script>
-
-    <div class="card">
-      <div class="" id="heading{{forloop.counter}}">
-        <h2 class="mb-0">
-          <button class="btn" style="width: 100%;text-align: left;" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-
-            <span class="btn-link"><b>{{key}}</b></span> <br/> 
-            <b style="color:#333">Total NGOs</b>: {{value.ngo_count}} <br/>
-            <b style="color:#333">Population reach</b>: {{value.population_reach}} &nbsp;&nbsp;&nbsp;&nbsp; 
-            <b style="color:#333">Staff count</b>: {{value.staff_count}}
-          </button>
-
-        </h2>
-
-      </div>
-
-      <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample" >
-        <div class="card-body">
-          <ul class="list-group mb-3">
-            <li class="list-group-item"><a href="" class="btn-link"> See the list of ALL NGOs in {{key}} </a></li>
-            {% for district in value.districts %}
-            <li class="list-group-item">
-                <b>{{district.0}}</b> <br/>
-              Total NGOs: {{district.1}} <br/>
-              Population reach: {{district.2}} &nbsp;&nbsp;&nbsp;&nbsp; 
-              Staff count: {{district.3}} <br/>
-              <a href="" class="btn-link"> See the list of NGOs in {{district.0}} </a>
-
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
+    <script type="text/javascript">
+      states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
+    </script>
+    <li class="list-group-item" style="padding: .25rem 1.25rem .25rem 0">
+      <button class="btn" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+        <span class="btn-link"><h6>{{key|title}} ({{value.ngo_count}})</h6></span> <br/> 
+      </button>
+    </li>
   {% endfor %}
-
-</div>
+</ul>
 </div>
  
-<div class="col-8">
-  <div id="mapIndia1">
-    </div>
-</div>
+<div class="col-6">
+  <div id="mapIndia1"></div>
 </div>
 
 
-
-
-
-
-
-
+<div class="col-3">
+  <ul class="list-group">
+    {% for key, value in all_data.items %}
+    <li class="list-group-item">
+      <div class="collapse" id="collapse{{forloop.counter}}">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+</div>
 
 <script>
 
@@ -103,7 +82,7 @@ function getStateColorByNGO(d) {
            d > 10  ? '#FC4E2A' :
            d > 5   ? '#FD8D3C' :
            d > 2   ? '#FEB24C' :
-           d > 1   ? '#FED976' :
+           d > 0  ? '#FED976' :
                       '#FFEDA0';
 }
 
@@ -156,17 +135,10 @@ function onEachFeature(feature, layer) {
     });
 }
 
-var map = L.map('mapIndia1').setView([22.805, 82.0], 5);
+var map = L.map('mapIndia1',{zoomSnap: .25}).setView([22.805, 82.0], 4.50);
 // Blank Layer to get us started
 var myLayer = L.geoJSON().addTo(map);
 
-// Add States Layer
-// geojson = L.geoJson(states_geojson, {
-//     style: style_states1,
-//     onEachFeature: function (feature, layer) {
-//       layer.bindPopup('<h3>State: '+feature.properties.ST_NM+'</h3>');
-//     }
-//   }).addTo(map);
 
 geojson = L.geoJson(states_geojson, {
     style: style_states1,
@@ -174,36 +146,12 @@ geojson = L.geoJson(states_geojson, {
   }).addTo(map);
 
 
-// CODE FOR LEGEND
-
-// var legend = L.control({position: 'bottomright'});
-// legend.onAdd = function (map) {
-//     var div = L.DomUtil.create('div', 'info legend'),
-//         grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-//         labels = [];
-
-//     // loop through our density intervals and generate a label with a colored square for each interval
-//     for (var i = 0; i < grades.length; i++) {
-//         div.innerHTML +=
-//             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-//             grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-//     }
-//     return div;
-// };
-
-// legend.addTo(map);
-
 // Add OSM tile layer with correct attribution
 var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
 var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 12, attribution: osmAttrib}); 
 map.addLayer(osm);  
 
-// Add Google tile layer with attribution
-// L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-//     maxZoom: 20,
-//     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-//     }, attribution: 'Map data © <a href="https://maps.google.com">Google</a> contributors').addTo(map); 
 </script>
 
 {% endblock %}

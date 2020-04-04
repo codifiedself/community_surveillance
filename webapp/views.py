@@ -10,6 +10,10 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models import Count, Sum
 
 
+def index(request):
+	return render(request, 'webapp/index.html', {})
+
+
 def ngo_create(request):
 	if request.method == "POST":
 		form = NgoForm(request.POST)
