@@ -128,9 +128,12 @@ class Ngo(AbstractOrganization):
 	REACH_MEDIUM_CHOICES = (('inperson', 'In Person Only'), ('remotely', 'Remote Only via phones'), ('remote_and_inperson', 'Both in Person & Remotely via phones'))
 	medium_of_reach = models.CharField(max_length=30, choices=REACH_MEDIUM_CHOICES, blank=False, default="")
 
+
 	staff_count = models.IntegerField(default=0)
 	# staff_details = models.TextField(blank=True)
-	does_staff_use_phones = models.BooleanField()
+
+	BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
+	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default="")
 	# staff_languages = models.TextField(blank=True)
 
 	pincode = models.IntegerField(blank=True, null=True)

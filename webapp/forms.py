@@ -22,7 +22,8 @@ class NgoForm(ModelForm):
         												search_fields=['name__icontains'],
 														attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
                     								),
-            'medium_of_reach': forms.RadioSelect()
+            'medium_of_reach': forms.RadioSelect(),
+            'does_staff_use_phones': forms.RadioSelect()
         	# 'operational_taluks': ModelSelect2MultipleWidget(model=Taluk,
         	# 											search_fields=['name__icontains'],
 									# 					attrs={'data-placeholder': 'Write the name of the state. You can select multiple.'} 
