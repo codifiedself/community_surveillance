@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='ngo',
             name='does_staff_use_phones',
-            field=models.BooleanField(choices=[(True, 'Yes'), (False, 'No')], default=''),
+            field=models.BooleanField(choices=[(True, 'Yes'), (False, 'No')], default=False),
         ),
         migrations.AlterField(
             model_name='ngo',
