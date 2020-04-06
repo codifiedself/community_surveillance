@@ -136,7 +136,7 @@ class Ngo(AbstractOrganization):
 	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default="")
 	# staff_languages = models.TextField(blank=True)
 
-	pincode = models.IntegerField(blank=True, null=True)
+	pincode = models.CharField(max_length=400, default="")
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
