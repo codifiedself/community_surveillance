@@ -75,6 +75,7 @@ color: #fff;
 	font-size: 12px;
 }
 
+
 .left-bar .list-group-item .btn-link {
 	font-size: 14px;
 	font-weight: 500;
@@ -91,4 +92,22 @@ color: #fff;
 .state_data {
     box-shadow: 0px 0px 5px #eee;
     border: 2px solid #ddd;
+}
+
+.addscroll{
+    max-height: 600px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    border:1px solid #ddd;
+    border-top: none;
+}
+
+.districts_data {
+        max-height: 600px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    border:1px solid #ddd;
+    padding: 10px
 }
