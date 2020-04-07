@@ -47,13 +47,16 @@
     <h5>State-wise NGO data</h5>
     <p class="description">Click on any state below to get its NGO data on the right side</p>
 
-
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
+        <div class="list-group-item mb-2" style="border:1px solid #ccc;">
           <button class="btn" id="india_link" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse_india}" aria-expanded="true" aria-controls="collapse_india">
             <span class="btn-link">All India</span> <br/> 
           </button>
-        </li>
+        </div>
+
+
+
+    <ul class="list-group list-group-flush addscroll">
+
 
       {% for key, value in all_data.items %}
 
@@ -64,7 +67,7 @@
         </li>
 
         <script type="text/javascript">
-          states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
+          states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "name":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
 
           $('#statelink_{{forloop.counter}}').bind("click", function() {
             onStateLinkClick("{{key}}", "collapse{{forloop.counter}}");
@@ -102,25 +105,27 @@
               districts_geojson["{{key}}"] = [];
             </script>
 
-            {% for district in value.districts %}
-            <div class="card card-body mb-2">
-                <h6>{{district.0}}</h6> 
-              Total NGOs: {{district.1}} <br/>
-              Population reach: {{district.2}} <br/> 
-              Staff count: {{district.3}} <br/>
-              <!-- <a href="" class="btn-link"> See all NGOs in {{district.0}} </a> -->
+            <div class="districts_data">
+              {% for district in value.districts %}
+              <div class="card card-body mb-2">
+                  <h6>{{district.0}}</h6> 
+                Total NGOs: {{district.1}} <br/>
+                Population reach: {{district.2}} <br/> 
+                Staff count: {{district.3}} <br/>
+                <!-- <a href="" class="btn-link"> See all NGOs in {{district.0}} </a> -->
 
 
-            <script type="text/javascript">
-              missing_districts = ["Bijapur(CGH)", "Gariaband", "Narayanpur", "Diu", "Central Delhi", "East Delhi", "New Delhi", "North Delhi", "North East Delhi", "North West Delhi", "South Delhi", "South West Delhi", "West Delhi", "Tapi", "Bandipur", "Kulgam", "Reasi", "Shopian", "Khunti", "Ramgarh", "Chikkaballapur", "Ramanagar", "Yadgir", "Lakshadweep", "Alirajpur", "Ashok Nagar", "Khandwa", "Khargone", "Singrauli", "Raigarh(MH)", "Kiphire", "Longleng", "Peren", "Barnala", "Fazilka", "Mohali", "Pathankot", "Rupnagar", "Tarn Taran", "East Sikkim", "Krishnagiri", "Bagpat", "Budaun"]
+              <script type="text/javascript">
+                missing_districts = ["Bijapur(CGH)", "Gariaband", "Narayanpur", "Diu", "Central Delhi", "East Delhi", "New Delhi", "North Delhi", "North East Delhi", "North West Delhi", "South Delhi", "South West Delhi", "West Delhi", "Tapi", "Bandipur", "Kulgam", "Reasi", "Shopian", "Khunti", "Ramgarh", "Chikkaballapur", "Ramanagar", "Yadgir", "Lakshadweep", "Alirajpur", "Ashok Nagar", "Khandwa", "Khargone", "Singrauli", "Raigarh(MH)", "Kiphire", "Longleng", "Peren", "Barnala", "Fazilka", "Mohali", "Pathankot", "Rupnagar", "Tarn Taran", "East Sikkim", "Krishnagiri", "Bagpat", "Budaun"]
 
-              if (!missing_districts.includes("{{district.0}}")){
-                districts_geojson["{{key}}"].push({"type":"Feature", "properties":{"ngo_count":{{district.1}}, "DT_NM":"{{district.0}}"}, "geometry":{"type":"MultiPolygon","coordinates":[districts["{{district.0}}"]]}});
-              }
-            </script>
+                if (!missing_districts.includes("{{district.0}}")){
+                  districts_geojson["{{key}}"].push({"type":"Feature", "properties":{"ngo_count":{{district.1}}, "name":"{{district.0}}", "population_reach": {{district.2|default_if_none:0}}, "staff_count": {{district.3|default_if_none:0}}}, "geometry":{"type":"MultiPolygon","coordinates":[districts["{{district.0}}"]]}});
+                }
+              </script>
 
+              </div>
+              {% endfor %} 
             </div>
-            {% endfor %} 
         </div>
       
       {% endfor %}

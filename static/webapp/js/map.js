@@ -63,12 +63,27 @@
 
   var layer_list = {};
 
-  function onEachFeature(feature, layer) {
-  	layer_list[feature.properties.ST_NM] = layer;
-    layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.ST_NM + '</b></span> <br/> \
-      <b style="color:#333">Total NGOs</b>:' + feature.properties.ngo_count + '<br/>\
-      <b style="color:#333">Population reach</b>:' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
-      <b style="color:#333">Staff count</b>:'+ feature.properties.staff_count);
+  function onEachFeatureInCountry(feature, layer) {
+  	layer_list[feature.properties.name] = layer;
+    layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.name + '</b></span> <br/> \
+      <b style="color:#333">Total NGOs</b>:&nbsp;' + feature.properties.ngo_count + '<br/>\
+      <b style="color:#333">Population reach</b>:&nbsp;' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
+      <b style="color:#333">Staff count</b>:&nbsp;'+ feature.properties.staff_count);
+
+
+    layer.on({
+      mouseover: highlightFeature,
+      mouseout: resetHighlight,
+        // click: zoomToFeature
+      });
+  }
+
+
+  function onEachFeatureInState(feature, layer) {
+    layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.name + '</b></span> <br/> \
+      <b style="color:#333">Total NGOs</b>:&nbsp;' + feature.properties.ngo_count + '<br/>\
+      <b style="color:#333">Population reach</b>:&nbsp;' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
+      <b style="color:#333">Staff count</b>:&nbsp;'+ feature.properties.staff_count);
 
 
     layer.on({
@@ -89,7 +104,7 @@
 
   country_layer = L.geoJson(states_geojson, {
                     style: style_states,
-                    onEachFeature: onEachFeature
+                    onEachFeature: onEachFeatureInCountry
                   });
 
   country_layer.addTo(map);
@@ -134,7 +149,7 @@ function onStateLinkClick(stateName, divToShow){
   //add new active state layer
   active_state_layer = L.geoJson(districts_geojson[stateName], {
     style: style_states,
-    //onEachFeature: onEachFeature
+    onEachFeature: onEachFeatureInState
   }).addTo(map);
 }
 
