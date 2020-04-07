@@ -4,9 +4,10 @@
 
 {% block content %}
 
-<link  rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+<link  rel="stylesheet" href="{% static 'webapp/css/leaflet.css' %}"/>
 
-<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+<!-- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script> -->
+<script type="text/javascript" src="{% static 'webapp/js/leaflet-src.js' %}"></script>
 
 
 <style type="text/css">  
@@ -19,9 +20,12 @@
 </style>
 
 <script type="text/javascript" src="{% static 'webapp/js/states.js' %}"></script>
+<script type="text/javascript" src="{% static 'webapp/js/districts.js' %}"></script>
 
 <script type="text/javascript">
   var states_geojson = [];
+  var districts_geojson = {};
+  var active_state_layer;
 </script>
 <!-- 
 <div class="row">
@@ -45,6 +49,12 @@
 
 
     <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <button class="btn" id="india_link" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse_india}" aria-expanded="true" aria-controls="collapse_india">
+            <span class="btn-link">All India</span> <br/> 
+          </button>
+        </li>
+
       {% for key, value in all_data.items %}
 
         <li class="list-group-item">
@@ -57,9 +67,12 @@
           states_geojson.push({"type":"Feature", "properties":{"ngo_count":{{value.ngo_count}}, "population_reach": {{value.population_reach}}, "staff_count": {{value.staff_count}}, "ST_NM":"{{key}}"}, "geometry":{"type":"MultiPolygon","coordinates":states["{{key}}"]}});
 
           $('#statelink_{{forloop.counter}}').bind("click", function() {
-            onStatLinkClick('{{key}}');
-            $(".district_data").hide();
-            $("#collapse{{forloop.counter}}").show();
+            onStateLinkClick("{{key}}", "collapse{{forloop.counter}}");
+          })
+
+          $('#india_link').bind("click", function() {
+            onAllIndiaLinkClick();
+            
           })
         </script>
 
@@ -85,6 +98,10 @@
             </div>
             <h6>&nbsp;District wise details</h6>
 
+            <script type="text/javascript">
+              districts_geojson["{{key}}"] = [];
+            </script>
+
             {% for district in value.districts %}
             <div class="card card-body mb-2">
                 <h6>{{district.0}}</h6> 
@@ -92,6 +109,16 @@
               Population reach: {{district.2}} <br/> 
               Staff count: {{district.3}} <br/>
               <!-- <a href="" class="btn-link"> See all NGOs in {{district.0}} </a> -->
+
+
+            <script type="text/javascript">
+              missing_districts = ["Bijapur(CGH)", "Gariaband", "Narayanpur", "Diu", "Central Delhi", "East Delhi", "New Delhi", "North Delhi", "North East Delhi", "North West Delhi", "South Delhi", "South West Delhi", "West Delhi", "Tapi", "Bandipur", "Kulgam", "Reasi", "Shopian", "Khunti", "Ramgarh", "Chikkaballapur", "Ramanagar", "Yadgir", "Lakshadweep", "Alirajpur", "Ashok Nagar", "Khandwa", "Khargone", "Singrauli", "Raigarh(MH)", "Kiphire", "Longleng", "Peren", "Barnala", "Fazilka", "Mohali", "Pathankot", "Rupnagar", "Tarn Taran", "East Sikkim", "Krishnagiri", "Bagpat", "Budaun"]
+
+              if (!missing_districts.includes("{{district.0}}")){
+                districts_geojson["{{key}}"].push({"type":"Feature", "properties":{"ngo_count":{{district.1}}, "DT_NM":"{{district.0}}"}, "geometry":{"type":"MultiPolygon","coordinates":[districts["{{district.0}}"]]}});
+              }
+            </script>
+
             </div>
             {% endfor %} 
         </div>

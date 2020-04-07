@@ -1,5 +1,5 @@
 
-  var geojson;
+  var country_layer;
 
   function getStateColorByNGO(d) {
     return d > 100 ? '#800026' :
@@ -12,7 +12,7 @@
     '#FFEDA0';
   }
 
-  function style_states1(feature) {
+  function style_states(feature) {
     return {
       fillColor: getStateColorByNGO(feature.properties.ngo_count),
       weight: 1,
@@ -23,12 +23,23 @@
     };
   }
 
+  function style_blank(feature) {
+    return {
+      fillColor: '#666',
+      weight: 1,
+      opacity: 1,
+      color: 'grey',
+      dashArray: '0',
+      fillOpacity: 0.7
+    };
+  }
+
 
   function highlightFeature(e) {
     var layer = e.target;
 
     layer.setStyle({
-      weight: 5,
+      weight: 3,
       color: '#666',
       dashArray: '',
       fillOpacity: 0.7
@@ -37,10 +48,13 @@
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
       layer.bringToFront();
     }
+
+    e.target.openPopup()
   }
 
   function resetHighlight(e) {
-    geojson.resetStyle(e.target);
+    country_layer.resetStyle(e.target);
+    e.target.closePopup()
   }
 
   function zoomToFeature(e) {
@@ -65,14 +79,27 @@
   }
 
   var map = L.map('mapIndia1',{zoomSnap: .25}).setView([22.805, 82.0], 4.50);
-// Blank Layer to get us started
-var myLayer = L.geoJSON().addTo(map);
+  // Blank Layer to get us started
+  var myLayer = L.geoJSON().addTo(map);
 
 
-geojson = L.geoJson(states_geojson, {
-  style: style_states1,
-  onEachFeature: onEachFeature
-}).addTo(map);
+  var background_layer = L.geoJson(states_geojson, {
+                            style: style_blank
+                          });
+
+  country_layer = L.geoJson(states_geojson, {
+                    style: style_states,
+                    onEachFeature: onEachFeature
+                  });
+
+  country_layer.addTo(map);
+
+  // var districts_layer 
+
+// L.geoJson(districts_geojson, {
+//   style: style_states,
+//   // onEachFeature: onEachFeature
+// }).addTo(map);
 
 
 // Add OSM tile layer with correct attribution
@@ -82,6 +109,52 @@ var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 12, attribution: osmAttr
 map.addLayer(osm);  
 
 
-function onStatLinkClick(stateName){
+function onStateLinkClick(stateName, divToShow){
+  //set zoom level
 	map.fitBounds(layer_list[stateName].getBounds());
+
+  //remove any other active state layers
+  if(active_state_layer){
+    map.removeLayer(active_state_layer);
+  }
+
+  // remove the country level layer
+  map.removeLayer(country_layer);
+
+  //hide all the right side district details for any state that was shown previously
+  $(".district_data").hide();
+
+
+  // show the right side data for selected state
+  $("#"+divToShow).show();
+
+  //add the transaprent background country layer
+  map.addLayer(background_layer);
+
+  //add new active state layer
+  active_state_layer = L.geoJson(districts_geojson[stateName], {
+    style: style_states,
+    //onEachFeature: onEachFeature
+  }).addTo(map);
+}
+
+function onAllIndiaLinkClick(){
+  map.fitBounds(country_layer.getBounds());
+  //remove any active state layers
+  if(active_state_layer){
+    map.removeLayer(active_state_layer);
+  }
+ 
+  if(!map.hasLayer(country_layer)){
+    map.addLayer(country_layer);    
+  }
+
+  //hide all the right side district details for any state that was shown previously
+  $(".district_data").hide();
+
+  // show the right side data for selected state
+  // $("#"+countryDataDiv).show();
+
+
+
 }
