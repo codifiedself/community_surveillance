@@ -1,5 +1,5 @@
 # from django.views.generic import CreateView
-from .forms import NgoForm
+from .forms import *
 # from django.views.generic.edit import FormView
 from .models import *
 from django.shortcuts import render, redirect
@@ -8,7 +8,8 @@ import json
 from django.core.serializers.json import DjangoJSONEncoder
 
 from django.db.models import Count, Sum
-
+from django.db import transaction
+from django.contrib import messages
 
 def index(request):
 	return render(request, 'webapp/index.html', {})
@@ -17,13 +18,25 @@ def index(request):
 def ngo_create(request):
 	if request.method == "POST":
 		form = NgoForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return render(request, 'webapp/form_thankyou.html', {})
+		ngo_district_form = NgoDistrictFormSet(request.POST, request.FILES)
+		with transaction.atomic():
+			print("got here 1")
+			if form.is_valid():
+				print("got here 2")
+				ngo = form.save()
+				if ngo_district_form.is_valid():
+					print("got here 3")
+					ngo_district_form.instance = ngo
+					ngo_district_form.save()
+
+				return render(request, 'webapp/form_thankyou.html', {})
+			else:
+				messages.error(request, "Error")
 	else:
 		form = NgoForm()
+		ngo_district_form = NgoDistrictFormSet()
 
-	return render(request, 'webapp/ngo_form.html',{'form': form})
+	return render(request, 'webapp/ngo_form.html',{'form': form, 'ngo_district_form': ngo_district_form})
 
 
 # class ListView(ListView):

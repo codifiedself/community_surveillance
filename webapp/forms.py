@@ -2,8 +2,44 @@
 from django.forms import ModelForm
 # from django.forms.widgets import TypedChoiceField
 from django_select2.forms import ModelSelect2MultipleWidget
-from .models import Ngo, State, District, Taluk
+from .models import *
 from django import forms
+
+from django.forms.models import inlineformset_factory
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Field, Fieldset, Div, Row, HTML, ButtonHolder, Submit
+from .custom_layout_object import *
+
+import re
+
+
+
+
+class NgoDistrictForm(forms.ModelForm):
+
+    class Meta:
+        model = NgoDistrict
+        exclude = ()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        formtag_prefix = re.sub('-[0-9]+$', '', kwargs.get('prefix', ''))
+
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            Row(
+                Field('district'),
+                Field('population_reach'),
+                Field('DELETE'),
+                css_class='formset_row-{}'.format(formtag_prefix)
+            )
+        )
+
+NgoDistrictFormSet = inlineformset_factory(Ngo, NgoDistrict, form=NgoDistrictForm,
+    fields=['district','population_reach'], extra=1, can_delete=True
+    )
 
 
 class NgoForm(ModelForm):
@@ -14,14 +50,17 @@ class NgoForm(ModelForm):
         	'population_reach', 'medium_of_reach', 'staff_count', 'does_staff_use_phones', 'pincode')
     	# 'operational_taluks','is_govt_funded', 'govt_programs_contributed_to', 'govt_programs_partnered_with',   'staff_details'
         widgets = {
-        	'operational_states': ModelSelect2MultipleWidget(model=State,
-        												search_fields=['name__icontains'],
-														attrs={'data-placeholder': 'Write the name of the state. You can select multiple.'} 
-                    								),
-        	'operational_districts': ModelSelect2MultipleWidget(model=District,
-        												search_fields=['name__icontains'],
-														attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
-                    								),
+        	# 'operational_states': ModelSelect2MultipleWidget(model=State,
+        	# 											search_fields=['name__icontains'],
+									# 					attrs={'data-placeholder': 'Write the name of the state. You can select multiple.'} 
+         #            								),
+            'operational_states': forms.CheckboxSelectMultiple(),
+            # 'operational_districts': ManyToManyRawIdWidget(),
+
+                # 'operational_districts': ModelSelect2MultipleWidget(model=District,
+                # 											search_fields=['name__icontains'],
+                # 											attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
+                #     								),
             'medium_of_reach': forms.RadioSelect(),
             'does_staff_use_phones': forms.RadioSelect()
         	# 'operational_taluks': ModelSelect2MultipleWidget(model=Taluk,
@@ -56,6 +95,7 @@ class NgoForm(ModelForm):
 
 
         }
+
         help_texts = {
             # 'name': _('Some useful help text.'),
             # 'work_area': 'Eg. Health, Education, Nutrition, Disability, WASH, Livelihoods, Financial Services etc',
@@ -70,6 +110,39 @@ class NgoForm(ModelForm):
             #     'max_length': _("This writer's name is too long."),
             # },
         }
+
+
+    def __init__(self, *args, **kwargs):
+        super(NgoForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = True
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-md-3 create-label'
+        self.helper.field_class = 'col-md-9'
+        self.helper.layout = Layout(
+            Div(
+                Field('name'),
+                Field('primary_contact'),
+                Field('email'),
+                Field('phone'),
+                Field('work_area'),
+                Field('special_needs_groups'),
+                Field('operational_level'),
+                Field('operational_states'),
+                Fieldset('Add Districts', Formset('ngo_district_form')),
+                Field('medium_of_reach'),
+                Field('staff_count'),
+                Field('does_staff_use_phones'),
+                Field('pincode'),
+
+                HTML("<br>"),
+                ButtonHolder(Submit('submit', 'Save NGO')),
+                )
+            )
+
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['operational_districts'].queryset = District.objects.none()
 
 
 

@@ -24,6 +24,7 @@ class DistrictAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Ngo, NgoAdmin)
+admin.site.register(NgoDistrict)
 admin.site.register(NgoUser)
 admin.site.register(NgoOwner)
 admin.site.register(State)

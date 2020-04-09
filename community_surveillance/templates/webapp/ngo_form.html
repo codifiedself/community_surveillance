@@ -3,6 +3,13 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<script type="text/javascript">
+            {% if messages %}
+                {% for message in messages %}
+                    console.log("{{message}}");
+                {% endfor %}
+            {% endif %}
+        </script>
 
 <!-- <section class="jumbotron text-center"> -->
 <div class="row">
@@ -32,14 +39,11 @@
 	<!-- </section> -->
 
 	<div class="row">
+		{% csrf_token %}
+		{% crispy form %}
+
 		
-		
-		<form method="post" novalidate>
-			{% csrf_token %}
-			{{ form|crispy }}
-			<button type="submit" class="btn btn-success">Save NGO</button>
-		</form>
-		<br/><br/>
+
 	</div>
 
         </div>

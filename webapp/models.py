@@ -30,6 +30,10 @@ class State(models.Model):
     def __str__(self):              # __unicode__ on Python 2
         return "%s" % (self.name)
 
+    class Meta:
+    	ordering = ['name']
+    		
+
 class District(models.Model):
     name = models.CharField(max_length=100)
     state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
@@ -39,6 +43,9 @@ class District(models.Model):
     		return "%s (%s)" % (self.name, self.state.name)
     	else:
     		return "%s (No State)" % (self.name)
+
+    class Meta:
+    	ordering = ['name']
 
         
 
@@ -117,7 +124,7 @@ class Ngo(AbstractOrganization):
 
 
 	operational_states = models.ManyToManyField(State)
-	operational_districts = models.ManyToManyField(District)
+	operational_districts = models.ManyToManyField(District, through='NgoDistrict')
 	# operational_taluks = models.ManyToManyField(Taluk)
 
 	# is_govt_funded = models.BooleanField()
@@ -133,7 +140,7 @@ class Ngo(AbstractOrganization):
 	# staff_details = models.TextField(blank=True)
 
 	BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
-	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default="")
+	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default=False)
 	# staff_languages = models.TextField(blank=True)
 
 	pincode = models.CharField(max_length=400, default="")
@@ -148,6 +155,15 @@ class Ngo(AbstractOrganization):
 
 	class Meta:
 		verbose_name = 'NGO'
+
+
+
+
+class NgoDistrict(models.Model):
+	ngo = models.ForeignKey(Ngo, on_delete=models.CASCADE)
+	district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True)
+	REACH_CHOICES = ((1000,'less than 1000 people'), (10000,'1000 to 10,000 people'), (50000,'10,000 to 50,000 people'), (100000,'more than 50,000 people'))
+	population_reach = models.IntegerField(choices=REACH_CHOICES)
 
 
 
