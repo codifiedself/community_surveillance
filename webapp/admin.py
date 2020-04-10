@@ -3,8 +3,8 @@ from django.contrib import admin
 from .models import *
 
 class NgoAdmin(admin.ModelAdmin):
-	list_display = ['name', 'primary_contact', 'email', 'phone',  'work_area', 'operational_level', 'population_reach', 'medium_of_reach', 'staff_count',
-    	'does_staff_use_phones', 'pincode']
+	list_display = ['name', 'primary_contact', 'email', 'phone',  'work_area', 'operational_level', 'medium_of_reach', 'staff_count',
+    	'does_staff_use_phones']
 
 	# search_fields = ['operational_states']
 	list_filter = ['operational_states', 'operational_districts']
@@ -24,6 +24,7 @@ class DistrictAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Ngo, NgoAdmin)
+admin.site.register(NgoDistrict)
 admin.site.register(NgoUser)
 admin.site.register(NgoOwner)
 admin.site.register(State)

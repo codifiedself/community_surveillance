@@ -117,13 +117,14 @@ class Ngo(AbstractOrganization):
 
 
 	operational_states = models.ManyToManyField(State)
-	operational_districts = models.ManyToManyField(District)
+	# operational_districts = models.ManyToManyField(District)
+	operational_districts = models.ManyToManyField(District, through='NgoDistrict', blank=True)	
 	# operational_taluks = models.ManyToManyField(Taluk)
 
 	# is_govt_funded = models.BooleanField()
 	# govt_programs_contributed_to = models.TextField(blank=True)
 	# govt_programs_partnered_with = models.TextField(blank=True)
-	population_reach = models.IntegerField(default=0)
+	# population_reach = models.IntegerField(default=0)
 
 	REACH_MEDIUM_CHOICES = (('inperson', 'In Person Only'), ('remotely', 'Remote Only via phones'), ('remote_and_inperson', 'Both in Person & Remotely via phones'))
 	medium_of_reach = models.CharField(max_length=30, choices=REACH_MEDIUM_CHOICES, blank=False, default="")
@@ -133,10 +134,10 @@ class Ngo(AbstractOrganization):
 	# staff_details = models.TextField(blank=True)
 
 	BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
-	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default="")
+	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default=False)
 	# staff_languages = models.TextField(blank=True)
 
-	pincode = models.CharField(max_length=400, default="")
+	# pincode = models.CharField(max_length=400, default="")
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
@@ -150,6 +151,11 @@ class Ngo(AbstractOrganization):
 		verbose_name = 'NGO'
 
 
+class NgoDistrict(models.Model):
+	ngo = models.ForeignKey(Ngo, on_delete=models.CASCADE)
+	district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True)
+	REACH_CHOICES = ((1000,'less than 1000 people'), (10000,'1000 to 10,000 people'), (50000,'10,000 to 50,000 people'), (100000,'more than 50,000 people'))
+	population_reach = models.IntegerField(choices=REACH_CHOICES, blank=False, default="")
 
 
 class NgoUser(AbstractOrganizationUser):

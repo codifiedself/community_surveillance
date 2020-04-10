@@ -1,5 +1,5 @@
 # from django.views.generic import CreateView
-from .forms import NgoForm
+from .forms import *
 # from django.views.generic.edit import FormView
 from .models import *
 from django.shortcuts import render, redirect
@@ -8,6 +8,8 @@ import json
 from django.core.serializers.json import DjangoJSONEncoder
 
 from django.db.models import Count, Sum
+
+from django.forms.models import modelformset_factory
 
 
 def index(request):
@@ -18,22 +20,35 @@ def ngo_create(request):
 	if request.method == "POST":
 		form = NgoForm(request.POST)
 		if form.is_valid():
-			form.save()
-			return render(request, 'webapp/form_thankyou.html', {})
+			ngo = form.save()
+			# return render(request, 'webapp/ngo_district_form.html', {})
+			return redirect("/ngo_district_list_and_form/?ngo_id="+str(ngo.pk)) 
 	else:
 		form = NgoForm()
 
 	return render(request, 'webapp/ngo_form.html',{'form': form})
 
 
-# class ListView(ListView):
-# 	template_name = 'book-list.html'
-# 	context_object_name = 'books'
-# 	paginate_by = 10
-# 	ordering = ['-created']
+def ngo_district_list_and_form(request):
+	NgoDistrictFormSet = modelformset_factory(NgoDistrict, form=NgoDistrictForm)     
+	
+	if request.method == 'POST':
+		formset = NgoDistrictFormSet(request.POST, request.FILES)
+		ngo_id = request.GET.get('ngo_id')
+		if formset.is_valid():
+			instances = formset.save(commit=False)
+			for instance in instances:
+				instance.ngo_id = ngo_id
+			# do something with the formset.cleaned_data
+				instance.save()
+			return render(request, 'webapp/form_thankyou.html',{})
 
-#     def get_queryset(self):
-#         return Book.objects.filter(created_by=self.request.user)
+	else:
+		ngo_id = request.GET.get('ngo_id')
+		formset = NgoDistrictFormSet(initial=[{'ngo_id':ngo_id}], queryset=NgoDistrict.objects.none())
+
+		return render(request, 'webapp/ngo_district_list_and_form.html',{'formset': formset, 'ngo_id': ngo_id})
+
 
 
 def ngo_details(request):

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+<div class="row">
+<div class="col-1"></div>
+<div class="col-10">
+  <div class="row">
+
+    <h3><br/>One more question</h3>
+
+    <p>Please add all districts in which your organization carries out direct implementation activities. </p>
+  </div>
+
+  <div class="row">
+
+    <form method="post" class="horizontal-form">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <div id="form_set">
+        {% for form in formset.forms %}
+          {{form.non_field_errors}}
+        {{form.errors}}
+            <table class='no_error'>
+                {{ form|crispy }}
+
+            </table>
+        {% endfor %}
+    </div>
+    <input type="button" class="btn btn-outline-primary" value="Add another District of implementation" id="add_more">
+    <input type="hidden" value="{{ngo_id}}" id="ngo_id">
+    <div id="empty_form" style="display:none">
+        <table class='no_error'>
+            {{ formset.empty_form | crispy}}
+        </table>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <button type="submit" class="btn btn-outline-success">Save All District Information</button>
+
+    </form>
+  </div>
+</div>
+<div class="col-1"></div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+$('#add_more').click(function() {
+  var form_idx = $('#id_form-TOTAL_FORMS').val();
+  var empty_form = $('#empty_form').html().replace(/__prefix__/g, form_idx);
+  $('#form_set').append(empty_form);
+  $('#id_form-'+form_idx+'-district').combobox();
+  $(".custom-combobox-input").attr('placeholder','Search by District name')
+
+  $('#id_form-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+
+});
+
+$(".form-check").addClass('form-check-inline');
+</script>
+<script type="text/javascript" src="{% static 'webapp/js/select_to_autocomplete.js' %}"></script>
+
+
+
+{% endblock %}
+ 

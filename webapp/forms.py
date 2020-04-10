@@ -1,27 +1,28 @@
 # from django.db import models
-from django.forms import ModelForm
+from django.forms import ModelForm, formset_factory, BaseModelFormSet
 # from django.forms.widgets import TypedChoiceField
 from django_select2.forms import ModelSelect2MultipleWidget
-from .models import Ngo, State, District, Taluk
+from .models import *
 from django import forms
+
+
+
 
 
 class NgoForm(ModelForm):
     
     class Meta:
         model = Ngo
-        fields = ('name', 'primary_contact', 'email', 'phone',  'work_area', 'special_needs_groups', 'operational_level', 'operational_states', 'operational_districts', 
-        	'population_reach', 'medium_of_reach', 'staff_count', 'does_staff_use_phones', 'pincode')
+        fields = ('name', 'primary_contact', 'email', 'phone',  'work_area', 'special_needs_groups', 'operational_level', 'operational_states', 
+        	'medium_of_reach', 'staff_count', 'does_staff_use_phones')
     	# 'operational_taluks','is_govt_funded', 'govt_programs_contributed_to', 'govt_programs_partnered_with',   'staff_details'
         widgets = {
-        	'operational_states': ModelSelect2MultipleWidget(model=State,
-        												search_fields=['name__icontains'],
-														attrs={'data-placeholder': 'Write the name of the state. You can select multiple.'} 
-                    								),
-        	'operational_districts': ModelSelect2MultipleWidget(model=District,
-        												search_fields=['name__icontains'],
-														attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
-                    								),
+        	'operational_states': forms.CheckboxSelectMultiple(),
+                    								
+        	# 'operational_districts': ModelSelect2MultipleWidget(model=District,
+        	# 											search_fields=['name__icontains'],
+									# 					attrs={'data-placeholder': 'Write the name of the district. You can select multiple.'} 
+         #            								),
             'medium_of_reach': forms.RadioSelect(),
             'does_staff_use_phones': forms.RadioSelect()
         	# 'operational_taluks': ModelSelect2MultipleWidget(model=Taluk,
@@ -42,17 +43,17 @@ class NgoForm(ModelForm):
             'special_needs_groups': '6. Does your organization work with any special needs’ group? (Select as many as applies)',
             'operational_level': '7. At what level, does your organization carry out direct implementation activities?',
             'operational_states': '8. In which states or union territories does your organization carry out direct implementation activities?',
-            'operational_districts': '9. Please list all districts in which your organization has been carrying out direct implementation activities.',
+            # 'operational_districts': '9. Please list all districts in which your organization has been carrying out direct implementation activities.',
             # 'operational_taluks': 'Please list all taluks in which your organization has been carrying out implementation activities.',
             # 'is_govt_funded': 'Select this checkbox if your project receives funding or other resources from national or state government?',
             # 'govt_programs_contributed_to': 'Does your project contribute to the objectives of any government programs? If so, please name the programs, adding if they are state-specific or district-level programs. (For example, if you have your cadre of frontline health workers, training government functionaries, providing community outreach support, community monitoring etc.)',
             # 'govt_programs_partnered_with': 'Does your project work in partnership with any government programs? If so, please name the programs. (Partnership means you have a formal MoU with the Government or relevant department, and you support in program implementation)',
-            'population_reach': '10. Please share the direct population reach of your organization on the ground',
-            'medium_of_reach': '11. For the people you can reach, can you reach them in-person only or also remotely (via phones)',
-            'staff_count': '12. How many ground-level, frontline staff do you have? (field staff, community outreach workers,  community volunteers)',
-            'does_staff_use_phones': '13. Does your team use mobile phones/tablets and internet services for day to day project operations? ',
+            'population_reach': '9. Please share the direct population reach of your organization on the ground',
+            'medium_of_reach': '10. For the people you can reach, can you reach them in-person only or also remotely (via phones)',
+            'staff_count': '11. How many ground-level, frontline staff do you have? (field staff, community outreach workers,  community volunteers)',
+            'does_staff_use_phones': '12. Does your team use mobile phones/tablets and internet services for day to day project operations? ',
             # 'staff_languages': '14. What languages does your team speak, read and write it? (List All)',
-            'pincode': '14. Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function (comma separated)'
+            # 'pincode': '14. Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function (comma separated)'
 
 
         }
@@ -73,4 +74,23 @@ class NgoForm(ModelForm):
 
 
 
+class NgoDistrictForm(forms.ModelForm):
+
+    class Meta:
+        model = NgoDistrict
+        fields = ('district', 'population_reach')
+        widgets = {
+            'population_reach': forms.RadioSelect()
+        }
+        labels = {
+            'district': 'Enter or Search the District where you have reach',
+            'population_reach': 'Population reach in the selected District'
+        }
+
+        # widgets = {'ngo': forms.HiddenInput()}
+
+
+
+
+       
 
