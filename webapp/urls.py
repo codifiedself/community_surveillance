@@ -7,9 +7,15 @@ from organizations.backends import invitation_backend
 urlpatterns = [
     url(r'^accounts/', include('organizations.urls')),
     url(r'^select2/', include('django_select2.urls')),
+
     path('ngo/create/', ngo_create, name='ngo_create'),
+    path('covid19-ngo-collaboration-form', ngo_create, name='ngo_create'),
+
+
     path('ngo/details/', ngo_details, name='ngo_details'),
     path('ngo_district_list_and_form/', ngo_district_list_and_form, name='ngo_district_list_and_form'),
+
+
     
     # path('supplies_estimator', supplies_estimator, name='supplies_estimator'),
     path('', index, name='index'),
