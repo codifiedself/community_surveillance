@@ -42,7 +42,7 @@ class NgoForm(ModelForm):
             'work_area': '5. Area of work of the organization',
             'special_needs_groups': '6. Does your organization work with any special needs’ group? (Select as many as applies)',
             'operational_level': '7. At what level, does your organization carry out direct implementation activities?',
-            'operational_states': '8. In which states or union territories does your organization carry out direct implementation activities?',
+            'operational_states': '8. In which states or union territories does your organization carry out direct implementation activities? (If your organization is operational is in multiple states, select multiple)',
             # 'operational_districts': '9. Please list all districts in which your organization has been carrying out direct implementation activities.',
             # 'operational_taluks': 'Please list all taluks in which your organization has been carrying out implementation activities.',
             # 'is_govt_funded': 'Select this checkbox if your project receives funding or other resources from national or state government?',
@@ -61,8 +61,8 @@ class NgoForm(ModelForm):
             # 'name': _('Some useful help text.'),
             # 'work_area': 'Eg. Health, Education, Nutrition, Disability, WASH, Livelihoods, Financial Services etc',
             # 'operational_level': 'Select one option: State, District, Block, City, Taluk/Tehsil or Other',
-            'operational_states': 'If your organization is operational is in multiple states, select multiple',
-            'operational_districts': 'If your organization is operational in multiple districts, select multiple',
+            # 'operational_states': 'If your organization is operational is in multiple states, select multiple',
+            # 'operational_districts': 'If your organization is operational in multiple districts, select multiple',
             # 'operational_taluks': 'If your organization is operational is in multiple taluks, select multiple',
             # 'is_govt_funded': 'This refers to funding, in-kind contributions, etc.'
         }
@@ -86,6 +86,10 @@ class NgoDistrictForm(forms.ModelForm):
             'district': 'Enter or Search the District where you have reach',
             'population_reach': 'Population reach in the selected District'
         }
+
+    # def __init__(self, *args, **kwargs):
+    #     super(NgoDistrictForm, self).__init__(*args, **kwargs)
+    #     self.fields['district'].queryset = District.objects.filter(state__in = self.instance.ngo.operational_states)
 
         # widgets = {'ngo': forms.HiddenInput()}
 

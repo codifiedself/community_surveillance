@@ -45,9 +45,19 @@ def ngo_district_list_and_form(request):
 
 	else:
 		ngo_id = request.GET.get('ngo_id')
+
+		operational_states = Ngo.objects.get(pk=ngo_id).operational_states.all()
+
+		        # form.base_fields['local_categories'].queryset = LocalStoryCategory.\
+          #   objects.filter(office=request.user.profile.office)
+
 		formset = NgoDistrictFormSet(initial=[{'ngo_id':ngo_id}], queryset=NgoDistrict.objects.none())
 
-		return render(request, 'webapp/ngo_district_list_and_form.html',{'formset': formset, 'ngo_id': ngo_id})
+		for form in formset:
+			form.fields['district'].queryset = District.objects.filter(state__in = operational_states)
+		# formset.base_fields['district'].queryset = 
+
+	return render(request, 'webapp/ngo_district_list_and_form.html',{'formset': formset, 'ngo_id': ngo_id})
 
 
 
