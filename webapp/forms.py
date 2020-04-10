@@ -39,7 +39,7 @@ class NgoForm(ModelForm):
             'primary_contact': '2. Name of Primary Contact of the Organization',
             'email': '3. Email Id',
             'phone': '4. Contact Phone Number',
-            'work_area': '5. Area of work of the organization (Eg. Health, Education, Nutrition, Disability, WASH, Livelihoods, Financial Services etc)',
+            'work_area': '5. Area of work of the organization',
             'special_needs_groups': '6. Does your organization work with any special needs’ group? (Select as many as applies)',
             'operational_level': '7. At what level, does your organization carry out direct implementation activities?',
             'operational_states': '8. In which states or union territories does your organization carry out direct implementation activities?',
