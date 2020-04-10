@@ -30,6 +30,9 @@ class State(models.Model):
     def __str__(self):              # __unicode__ on Python 2
         return "%s" % (self.name)
 
+    class Meta:
+    	ordering = ['name']
+
 class District(models.Model):
     name = models.CharField(max_length=100)
     state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
@@ -39,6 +42,9 @@ class District(models.Model):
     		return "%s (%s)" % (self.name, self.state.name)
     	else:
     		return "%s (No State)" % (self.name)
+    		
+    class Meta:
+    	ordering = ['name']
 
         
 
