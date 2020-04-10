@@ -18,13 +18,17 @@ class CommodityAdmin(admin.ModelAdmin):
 
 class DistrictAdmin(admin.ModelAdmin):
 	search_fields = ['name']
+
+
+class NgoDistrictAdmin(admin.ModelAdmin):
+	list_display = ['ngo', 'district', 'population_reach']
 		
 
 
 
 
 admin.site.register(Ngo, NgoAdmin)
-admin.site.register(NgoDistrict)
+admin.site.register(NgoDistrict, NgoDistrictAdmin)
 admin.site.register(NgoUser)
 admin.site.register(NgoOwner)
 admin.site.register(State)

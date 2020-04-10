@@ -64,18 +64,18 @@ def ngo_district_list_and_form(request):
 def ngo_details(request):
 	#create a dictionary which has State Name : { NGO COUNT : "", Districts : [list of districts with their name and NGO counts] }
 	all_data = {}
-	# states = State.objects.values('name').annotate(ngo_count=Count('ngo'), population_reach=SUM('population_reach') ).order_by('name')
-	states = State.objects.values('name').annotate(ngo_count=Count('ngo'), population_reach=Sum('ngo__population_reach'), staff_count=Sum('ngo__staff_count')).order_by('name')
+
+	states = State.objects.values('name').annotate(ngo_count=Count('ngo'), staff_count=Sum('ngo__staff_count')).order_by('name')
 
 
 	for state in states:
-		state_population_reach = 0 if state['population_reach'] is None else state['population_reach']
+		state_population_reach = 0 #if state['population_reach'] is None else state['population_reach']
 		staff_count_staff_count =  0 if state['staff_count'] is None else state['staff_count']
 
 		all_data[state['name']] = {'ngo_count':state['ngo_count'],'population_reach':state_population_reach, 'staff_count':staff_count_staff_count, "districts" : []}
 
 
-	districts = District.objects.values('name','state__name').annotate(ngo_count=Count('ngo'), population_reach=Sum('ngo__population_reach'), staff_count=Sum('ngo__staff_count')).order_by('name')
+	districts = District.objects.values('name','state__name').annotate(ngo_count=Count('ngo'), population_reach=Sum('ngodistrict__population_reach'), staff_count=Sum('ngo__staff_count')).order_by('name')
 
 	for district in districts:
 		district_population_reach = 0 if district['population_reach'] is None else district['population_reach']
