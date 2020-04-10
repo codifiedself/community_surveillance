@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='ngodistrict',
             name='population_reach',
-            field=models.IntegerField(choices=[(1000, 'less than 1000 people'), (10000, '1000 to 10,000 people'), (50000, '10,000 to 50,000 people'), (100000, 'more than 50,000 people')], default=''),
+            field=models.IntegerField(choices=[(1000, 'less than 1000 people'), (10000, '1000 to 10,000 people'), (50000, '10,000 to 50,000 people'), (100000, 'more than 50,000 people')], default=0),
         ),
     ]
