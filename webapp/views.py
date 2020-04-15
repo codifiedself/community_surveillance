@@ -10,6 +10,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models import Count, Sum
 
 from django.forms.models import modelformset_factory
+from django.utils import translation
 
 
 def index(request):
@@ -24,6 +25,9 @@ def ngo_create(request):
 			# return render(request, 'webapp/ngo_district_form.html', {})
 			return redirect("/ngo_district_list_and_form/?ngo_id="+str(ngo.pk)) 
 	else:
+		lang = request.GET.get('lang')
+		if lang:
+			translation.activate(lang)
 		form = NgoForm()
 
 	return render(request, 'webapp/ngo_form.html',{'form': form})

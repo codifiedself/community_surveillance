@@ -3,6 +3,8 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth import get_user_model
 
+from django.utils.translation import gettext as _
+
 # from django.forms import ModelForm
 
 from organizations.abstract import (
@@ -84,43 +86,43 @@ class Ngo(AbstractOrganization):
 
 
 	WORK_AREA_CHOICES = (
-							('health','Health'), 
-							('education', 'Education'), 
-							('nutrition', 'Nutrition'),
-							('disability', 'Disability'), 
-							('wash', 'WASH'), 
-							('livelihoods','Livelihoods'), 
-							('financial_services', 'Financial Services'),
-							('others','Others')
+							('health',_('Health')), 
+							('education', _('Education')), 
+							('nutrition', _('Nutrition')),
+							('disability', _('Disability')), 
+							('wash', _('WASH')), 
+							('livelihoods',_('Livelihoods')), 
+							('financial_services', _('Financial Services')),
+							('others',_('Others'))
 						)
 
 	work_area = MultiSelectField(choices=WORK_AREA_CHOICES, null=True, blank=True)
 
 
-	OPERATIONAL_LEVEL_CHOICES = (('state', 'State'), ('district', 'District'), ('block', 'Block'), ('city', 'City'), ('taluk', 'Taluk/Tehsil'), ('other', 'Other'))
+	OPERATIONAL_LEVEL_CHOICES = (('state', _('State')), ('district', _('District')), ('block', _('Block')), ('city', _('City')), ('taluk', _('Taluk/Tehsil')), ('other', _('Other')))
 	operational_level = MultiSelectField(choices=OPERATIONAL_LEVEL_CHOICES, null=True, blank=True)
 
 
 	SPECIAL_NEEDS_CHOICES = (
-								('no', 'No, we do not work with any special needs group'),
-								('mental_illness', 'People with mental illness'),
-								('hearing_loss','People with hearing loss'),
-								('physical_disabilities','People with physical disabilities'),
-								('intellectual_disabilities','People with intellectual disabilities'),
-								('aids','People living with HIV/AIDS'),
-								('sex_workers', 'Sex Workers'),
-								('injective_drug_users', 'Injective Drug Users'),
-								('msm_and_trans','MSM and Trans People'),
-								('chronic_illness','People living with chronic illness such as cancer, heart ailments, are immune-compromised'),
-								('elderly','Elderly'),
-								('tribal_population','Tribal population'),
-								('rural_poor','Rural poor'),
-								('urban_poor','Urban poor'),
+								('no', _('No, we do not work with any special needs group')),
+								('mental_illness', _('People with mental illness')),
+								('hearing_loss', _('People with hearing loss')),
+								('physical_disabilities', _('People with physical disabilities')),
+								('intellectual_disabilities', _('People with intellectual disabilities')),
+								('aids', _('People living with HIV/AIDS')),
+								('sex_workers', _('Sex Workers')),
+								('injective_drug_users', _('Injective Drug Users')),
+								('msm_and_trans', _('MSM and Trans People')),
+								('chronic_illness', _('People living with chronic illness such as cancer, heart ailments, are immune-compromised')),
+								('elderly', _('Elderly')),
+								('tribal_population', _('Tribal population')),
+								('rural_poor', _('Rural poor')),
+								('urban_poor', _('Urban poor')),
 								# ('migrants','Migrants and internally displaced'),
-								('migrant_labourers', 'Migrant labourers'),
-								('hospice_shelters','Hospice/homes/orphanages/shelters'),
-								('homeless','Homeless'),
-								('others','Others')
+								('migrant_labourers', _('Migrant labourers')),
+								('hospice_shelters',_('Hospice/homes/orphanages/shelters')),
+								('homeless', _('Homeless')),
+								('others', _('Others'))
 							)
 	special_needs_groups = MultiSelectField(choices=SPECIAL_NEEDS_CHOICES, null=True, blank=True)
 
@@ -135,14 +137,14 @@ class Ngo(AbstractOrganization):
 	# govt_programs_partnered_with = models.TextField(blank=True)
 	# population_reach = models.IntegerField(default=0)
 
-	REACH_MEDIUM_CHOICES = (('inperson', 'In Person Only'), ('remotely', 'Remote Only via phones'), ('remote_and_inperson', 'Both in Person & Remotely via phones'))
+	REACH_MEDIUM_CHOICES = (('inperson', _('In Person Only')), ('remotely', _('Remote Only via phones')), ('remote_and_inperson', _('Both in Person & Remotely via phones')))
 	medium_of_reach = models.CharField(max_length=30, choices=REACH_MEDIUM_CHOICES, blank=False, default="")
 
 
 	staff_count = models.IntegerField(default=0)
 	# staff_details = models.TextField(blank=True)
 
-	BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
+	BOOL_CHOICES = ((True, _('Yes')), (False, _('No')))
 	does_staff_use_phones = models.BooleanField(choices=BOOL_CHOICES, blank=False, default=False)
 	# staff_languages = models.TextField(blank=True)
 
@@ -163,7 +165,7 @@ class Ngo(AbstractOrganization):
 class NgoDistrict(models.Model):
 	ngo = models.ForeignKey(Ngo, on_delete=models.CASCADE)
 	district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True)
-	REACH_CHOICES = ((1000,'less than 1000 people'), (10000,'1000 to 10,000 people'), (50000,'10,000 to 50,000 people'), (100000,'more than 50,000 people'))
+	REACH_CHOICES = ((1000,_('less than 1000 people')), (10000,_('1000 to 10,000 people')), (50000,_('10,000 to 50,000 people')), (100000,_('more than 50,000 people')))
 	population_reach = models.IntegerField(choices=REACH_CHOICES, blank=False, default="")
 
 

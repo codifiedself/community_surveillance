@@ -4,6 +4,8 @@
 
 {% load crispy_forms_tags %}
 
+{% load i18n %}
+
 {% block content %}
 
 <!-- <section class="jumbotron text-center"> -->
@@ -12,30 +14,30 @@
 <div class="col-10">
 	<div class="row">
 
-		<h3><br/>The COVID-19 NGO/CBO with Direct Reach Collaboration Sign Up Form</h3>
+		<h3><br/>{% trans "The COVID-19 NGO/CBO with Direct Reach Collaboration Sign Up Form" %}</h3>
 		<p>
 			<br/>
 
-			Calling all non-profits and community-based organisations working directly with vulnerable communities to join this collaborative effort to fight COVID-19. Together, we can REACH the UNREACHED.
+			{% trans "Calling all non-profits and community-based organisations working directly with vulnerable communities to join this collaborative effort to fight COVID-19. Together, we can REACH the UNREACHED." %}
 
 			<br/><br/>
-			COVID-19 has a serious impact on the health and livelihood of the communities you serve. The need of the hour is reliable data from the ground that supports the current relief activities, along with trusted, established channels that can relay critical information back to the communities (example community surveillance, testing and telephone counselling etc). 
+			{% trans "COVID-19 has a serious impact on the health and livelihood of the communities you serve. The need of the hour is reliable data from the ground that supports the current relief activities, along with trusted, established channels that can relay critical information back to the communities (example community surveillance, testing and telephone counselling etc)." %} 
 			<br/><br/>
-			If you are keen on collaborating on reaching communities directly for action against COVID-19, please fill this form. It will take you around 10 mins. This effort is aimed towards a coordinated and comprehensive on-ground COVID response in communities in partnership with local governments.
+			{% trans "If you are keen on collaborating on reaching communities directly for action against COVID-19, please fill this form. It will take you around 10 mins. This effort is aimed towards a coordinated and comprehensive on-ground COVID response in communities in partnership with local governments." %}
 			<br/><br/>
 
-			Filling this form will also sign you up with the COVID Action Collaborative. This will provide you access to numerous resources in the form of tools, capacity building and foster critical joint efforts including fund-raising.
+			{% trans "Filling this form will also sign you up with the COVID Action Collaborative. This will provide you access to numerous resources in the form of tools, capacity building and foster critical joint efforts including fund-raising." %}
 			<br/><br/>
-			If you know others who would like to contribute, please share this form.
+			{% trans "If you know others who would like to contribute, please share this form." %}
 			<br/><br/>
-			Thank you.
+			{% trans "Thank you." %}
 			<!-- <br/><br/> -->
 
 			<!-- <b>This form closes on 15th April 2020.</b> -->
 
 			<br/><br/>	
 		</p>
-		<h5>Please fill the details below:</h5>
+		<h5>{% trans "Please fill the details below:" %}</h5>
 	</div>
 	<!-- </section> -->
 
@@ -45,7 +47,7 @@
 		<form method="post" novalidate>
 			{% csrf_token %}
 			{{ form|crispy }}
-			<button type="submit" class="btn btn-success">Next</button>
+			<button type="submit" class="btn btn-success">{% trans "Next" %}</button>
 		</form>
 		<br/><br/>
 	</div>
