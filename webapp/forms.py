@@ -5,7 +5,7 @@ from django_select2.forms import ModelSelect2MultipleWidget
 from .models import *
 from django import forms
 
-from django.utils.translation import gettext as _
+from django.utils.translation import ugettext_lazy as _
 
 
 
