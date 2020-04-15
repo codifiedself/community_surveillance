@@ -28,6 +28,9 @@ def ngo_create(request):
 		lang = request.GET.get('lang')
 		if lang:
 			translation.activate(lang)
+		else:
+			translation.activate('en-us')
+
 		form = NgoForm()
 
 	return render(request, 'webapp/ngo_form.html',{'form': form})
