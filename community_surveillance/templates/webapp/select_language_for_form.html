@@ -40,10 +40,10 @@
     	$("#lang_button").on('click', function(){
     		var radio_value = $("input[name='language_list']:checked").val()
     		if(!radio_value) {
-    			alert("Please select a value");
+    			alert("Please select a language.");
     		} else {
     			// alert();
-    			window.location.href = "/covid19-ngo-collaboration-form?lang="+radio_value;
+    			window.location.href = "/ngo/create/?lang="+radio_value;
     		} 
     	})
 	})
