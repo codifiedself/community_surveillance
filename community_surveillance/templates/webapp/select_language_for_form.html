@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} COVID-19 NGO Collaboration Sign-up Form {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-1"></div>
+	<div class="col-10">
+		<div class="row">
+
+		<p><br/>
+		Please select the languange in which you want to see the  "COVID-19 NGO/CBO with Direct Reach Collaboration Sign Up Form".
+
+		</p>
+		{% for lan in langs %}
+
+			<div class="form-check" style="float: left;width: 100%;margin-bottom: 10px">
+				<input class="form-check-input" type="radio" name="language_list" id="lang_{{lan.1}}" value="{{lan.1}}">
+				<label class="form-check-label" for="lang_{{lan.1}}">
+				{{lan.0}}
+				</label>
+			</div>
+
+		{% endfor %}
+		<br/><br/>
+		<button type="submit" id="lang_button" class="btn btn-success">Next</button>
+
+
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	
+	$( document ).ready(function() {
+    	$("#lang_button").on('click', function(){
+    		var radio_value = $("input[name='language_list']:checked").val()
+    		if(!radio_value) {
+    			alert("Please select a value");
+    		} else {
+    			// alert();
+    			window.location.href = "/covid19-ngo-collaboration-form?lang="+radio_value;
+    		} 
+    	})
+	})
+</script>
+
+{% endblock %}

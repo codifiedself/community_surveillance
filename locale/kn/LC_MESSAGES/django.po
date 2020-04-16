@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-15 07:14+0530\n"
+"POT-Creation-Date: 2020-04-15 16:05+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,281 +18,275 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: community_surveillance/templates/webapp/ngo_form.html:15
+#: community_surveillance/templates/webapp/form_thankyou.html:11
+msgid "Thank You"
+msgstr "ಧನ್ಯವಾದ "
+
+#: community_surveillance/templates/webapp/form_thankyou.html:14
+msgid "Thank you for your time and sharing this information with us. We will get in touch with you with resources/information on COVID-19 response as and when they come. In the meantime please access all available resources at"
+
+msgstr   "ನಿಮ್ಮ ಸಮಯ ಮತ್ತು ಈ ಮಾಹಿತಿಯನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಂಚಿಕೊಂಡಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. COVID-19 ಪ್ರತಿಕ್ರಿಯೆಯ ಸಂಪನ್ಮೂಲಗಳು / ಮಾಹಿಯೂ ಬಂದಾಗ ನಾವು ನಿಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರುತ್ತೇವೆ. ಅಲ್ಲಿವರೆಗೂ ದಯವಿಟ್ಟು ಲಭ್ಯವಿರುವ ಎಲ್ಲ ಸಂಪನ್ಮೂಲಗಳನ್ನು ಬಳಸಿ"
+
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:21
+msgid  "One more question"
+msgstr "ಮತ್ತೊಂದು ಪ್ರಶ್ನೆ"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:23
+msgid "Please list all districts in which your organization has been carrying out direct implementation activities. (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)"
+msgstr " ನಿಮ್ಮ ಸಂಸ್ಥೆ ಯಾವ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ನೇರವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ ಎಲ್ಲಾ ಜಿಲ್ಲೆಗಳನ್ನು ಪಟ್ಟಿಮಾಡಿ   (ನಿಮ್ಮ ಸಂಸ್ಥೆ ಅನೇಕ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದ್ದರೆ, ಹೆಚ್ಚು ಆಯ್ಕೆಮಾಡಿ)"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:51
+msgid "Save All District Information"
+msgstr " ಎಲ್ಲಾ ಜಿಲ್ಲೆಯ ಮಾಹಿತಿಯನ್ನು  ಇಟ್ಟುಕೊಂಡ್ಡಿರುವುದು "
+
+#: community_surveillance/templates/webapp/ngo_form.html:17
 msgid "The COVID-19 NGO/CBO with Direct Reach Collaboration Sign Up Form"
-msgstr "COVID-19  ಸರ್ಕಾರೇತರ ಸಂಸ್ಥೆಯ(NGO) ಸಹಯೋಗದೊಂದಿಗೆ ಕೆಲಸ ಮಾಡಲು ಒಪ್ಪಿಗೆ ಸೂಚಿಸುವ ಅರ್ಜಿ "
+msgstr " COVID-19  ಸರ್ಕಾರೇತರ ಸಂಸ್ಥೆ/ ಸಮುದಾಯ ಆಧಾರಿತ ಸಂಸ್ಥೆ(NGO/CBO)ಸಹಯೋಗದೊಂದಿಗೆ  ನೇರವಾಗಿ ಕೆಲಸ ಮಾಡಲು ಒಪ್ಪಿಗೆ ಸೂಚಿಸುವ ಅರ್ಜಿ  "
 
-#: community_surveillance/templates/webapp/ngo_form.html:19
-msgid ""
-"Calling all non-profits and community-based organisations working directly "
-"with vulnerable communities to join this collaborative effort to fight "
-"COVID-19. Together, we can REACH the UNREACHED."
-msgstr "ಎಲ್ಲಾ ಲಾಭರಹಿತ ಮತ್ತು ಸಮುದಾಯ ಆಧಾರಿತ ಸಂಸ್ಥೆಗಳು ಜೊತೆಯಾಗಿ  ದುರ್ಬಲ ಸಮುದಾಯಗಳ ಪರವಾಗಿ ಹೇಗೆ ಈ COVID-19ರ  ವಿರುದ್ಧ ಹೋರಾಡಲು ಒಗ್ಗಟ್ಟಾಗಿ ಕೆಲಸ ಮಾಡಬೇಕಾಗಿರುವುದರ ಅವಶ್ಯಕತೆ ಮತ್ತು ಅನಿರ್ವಾಯತೆ ಇರುತ್ತದೆ. ಹಾಗಾಗಿ ನಾವೆಲ್ಲರೂ ಒಂದಾಗಿ ತಲುಪಲಾರದ ಸಮುದಾಯವನ್ನು(ದುರ್ಬಲ ಸಮುದಾಯ) ತಲುಪುವ ಪ್ರಯತ್ನ ಮಾಡೋಣ."
 
-#: community_surveillance/templates/webapp/ngo_form.html:22
-msgid ""
-"COVID-19 has a serious impact on the health and livelihood of the "
-"communities you serve. The need of the hour is reliable data from the ground "
-"that supports the current relief activities, along with trusted, established "
-"channels that can relay critical information back to the communities "
-"(example community surveillance, testing and telephone counselling etc)."
-msgstr "COVID-19 - ನಾವು ಸೇವೆ ಸಲ್ಲಿಸುತ್ತಿರುವ ಸಮುದಾಯಗಳ ಆರೋಗ್ಯ ಮತ್ತು ಜೀವನೋಪಾಯದ ಮೇಲೆ ತುಂಬಾ ಗಂಭೀರವಾದ ಪರಿಣಾಮಗಳನ್ನು ಬೀರಿದೆ."
+#: community_surveillance/templates/webapp/ngo_form.html:21
+msgid "Calling all non-profits and community-based organisations working directly with vulnerable communities to join this collaborative effort to fight COVID-19. Together, we can REACH the UNREACHED."
+msgstr "COVID-19 ರ ವಿರುದ್ಧ ಹೋರಾಡಲು ಈ ಸಹಯೋಗದ ಪ್ರಯತ್ನಕ್ಕೆ ಜೊತೆಗೂಡಿ ದುರ್ಬಲ ಸಮುದಾಯಗಳೊಂದಿಗೆ ನೇರವಾಗಿ  ಕೆಲಸಮಾಡಲು ಲಾಭರಹಿತ ಮತ್ತು ಸಮುದಾಯ ಆಧಾರಿತ ಸಂಸ್ಥೆಗಳನ್ನು ಕರೆಯುವುದು. ಒಟ್ಟಾಗಿ,  ನಾವು ಅವರನ್ನು ತಲುಪಬಹುದು."
 
 #: community_surveillance/templates/webapp/ngo_form.html:24
-msgid ""
-"If you are keen on collaborating on reaching communities directly for action "
-"against COVID-19, please fill this form. It will take you around 10 mins. "
-"This effort is aimed towards a coordinated and comprehensive on-ground COVID "
-"response in communities in partnership with local governments."
-msgstr "ಪ್ರಸ್ತುತ ಸಮಯದಲ್ಲಿ ವಿಶ್ವಾಸರ್ಹಾ ಮತ್ತು ವಿಶ್ಲೇಷಣಾತ್ಮಕ ದತ್ತಾಂಶಗಳನ್ನೂ ಇಟ್ಟುಕೊಂಡು ಅಗತ್ಯೆವಿರುವ ಪರಿಹಾರ  ಚಟುವಟಿಕೆಗಳನ್ನು ಸಮುದಾಯಗಳಿಗೆ ಒದಗಿಸುವುದು ಮತ್ತು  ಈಗಾಗಲೇ ಕೆಲಸ ನಿರ್ವಹಿಸುತ್ತಿರುವ ನಂಬಿಕಸ್ತ ಸಂಸ್ಥೆಗಳ ಮೂಲಕ ಸಮುದಾಯದ ಕಣ್ಗಾವಲು, ಪರೀಕ್ಷೆ ಮತ್ತು ದೂರವಾಣಿಯ ಮೂಲಕ ಸಮಾಲೋಚನೆ ಇತರೆ  ಕೆಲಸ ಮಾಡುವುದರ ಅಗತ್ಯತೆ ಹೆಚ್ಚಾಗಿರುತ್ತದೆ."
+msgid "COVID-19 has a serious impact on the health and livelihood of the communities you serve. The need of the hour is reliable data from the ground that supports the current relief activities, along with trusted, established channels that can relay critical information back to the communities (example community surveillance, testing and telephone counselling etc)."
+msgstr "COVID-19 ನೀವು ಸೇವೆ ಸಲ್ಲಿಸುತ್ತಿರುವ ಸಮುದಾಯಗಳ ಆರೋಗ್ಯ ಮತ್ತು ಜೀವನೋಪಾಯದ ಮೇಲೆ ಗಂಭೀರ ಪರಿಣಾಮ ಬೀರುತ್ತದೆ. ವಿಶ್ವಾಸಾರ್ಹ ದತ್ತಾಂಶವು ಸಮಯದ ಅಗತ್ಯತೆ ಮತ್ತು ಪ್ರಸ್ತುತ ಪರಿಹಾರ ಚಟುವಟಿಕೆಗಳನ್ನು ಬೆಂಬಲಿಸುವ ತಳಹದಿಯ ಮಾಹಿತಿಯಾಗಿದೆ, ಜೊತೆಗೆ ಸಮುದಾಯಕ್ಕೆ ವಿಶ್ವಾಸಾರ್ಹ, ಸ್ಥಾಪಿತ  ಮಾರ್ಗಗಳ ಜೊತೆಗೆ ವಿಮರ್ಶಾತ್ಮಕ ಮಾಹಿತಿಯನ್ನು   ಪ್ರಸಾರ ಮಾಡಬಹುದು  (ಉದಾಹರಣೆಗೆ ಸಮುದಾಯ ಕಣ್ಗಾವಲು, ಪರೀಕ್ಷೆ ಮತ್ತು ದೂರವಾಣಿ ಸಮಾಲೋಚನೆ ಇತ್ಯಾದಿ). "
 
-#: community_surveillance/templates/webapp/ngo_form.html:27
-msgid ""
-"Filling this form will also sign you up with the COVID Action Collaborative. "
-"This will provide you access to numerous resources in the form of tools, "
-"capacity building and foster critical joint efforts including fund-raising."
-msgstr "ಹಾಗಾಗೀ COVID-19ರ  ವಿರುದ್ಧ ಕೆಲಸ ಮಾಡುವ ಆಸಕ್ತಿ ಮತ್ತು  ಉತ್ಸುಕರಾಗಿದ್ದರೆ ದಯವಿಟ್ಟು ಈ ಅರ್ಜಿಯನ್ನು ಭರ್ತಿ ಮಾಡಿ, ಅರ್ಜಿ ತುಂಬಲು ಕೇವಲ  ೧೦ ನಿಮಿಷ ಸಮಯ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ ಈ ಕ್ರಿಯೆಯಲ್ಲಿ ನೀವು ಭಾಗಿಗಳಾಗುವುದರಿಂದ ಬೇರೆ ಬೇರೆ ಮೂಲಗಳಿಂದ ಸಂಗ್ರಹಿಸಿದ ಮಾಹಿತಿ ಸಂಪನ್ಮೂಲಗಳನ್ನು  ಒಳಗೊಂಡ ವಿವಿಧ  ಉಪಕರಣಗಳು , ಕೆಲಸ ನಿರ್ವಹಿಸಲು ನಿಮಗೆ ಬೇಕಾದ ಸಾಮರ್ಥ್ಯ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಜಂಟಿ ಪಾಲುದಾರಿಕೆಯಿಂದ ಹಣ ಸಂಗ್ರಹಣೆಯನ್ನು ಮಾಡಬಹುದು. ಈ ಸಹಯೋಗವು ಸ್ಥಳೀಯ ಸರ್ಕಾರದೊಂದಿಗೆ ಜೊತೆಯಾಗಿ ಸಮುದಾಯಗಳ ಪರವಾಗಿ COVID-19ರ  ವಿರುದ್ಧ ಹೋರಾಡುವುದನ್ನು ಗುರಿಯಾಗಿರಿಸಿಕೊಂಡಿದೆ."
+#: community_surveillance/templates/webapp/ngo_form.html:26
+msgid "If you are keen on collaborating on reaching communities directly for action against COVID-19, please fill this form. It will take you around 10 mins. This effort is aimed towards a coordinated and comprehensive on-ground COVID response in communities in partnership with local governments."
+msgstr "COVID-19, ದಯವಿಟ್ಟು ಈ ಅರ್ಜಿಯನ್ನು ಭರ್ತಿ ಮಾಡಿ. ಇದನ್ನು ಭರ್ತಿ ಮಾಡಲು ಸುಮಾರು 10 ನಿಮಿಷಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ. ಈ ಪ್ರಯತ್ನವು ಸ್ಥಳೀಯ ಸರ್ಕಾರಗಳ ಸಹಭಾಗಿತ್ವದಲ್ಲಿ ಸಮುದಾಯಗಳಲ್ಲಿ ಸಂಘಟಿತ ಮತ್ತು ಸಮಗ್ರ  ಕಾರ್ಯಕ್ಷೇತ್ರದಲ್ಲಿ COVID ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಗುರಿಯಾಗಿರಿಸಿಕೊಂಡಿದೆ. "
 
 #: community_surveillance/templates/webapp/ngo_form.html:29
-msgid ""
-"If you know others who would like to contribute, please share this form."
-msgstr "ಈ ಕಾರ್ಯಕ್ಕೆ ನಿಮ್ಮ ಕಡೆಯಿಂದ ಹೆಚ್ಚು ಬೆಂಬಲ ಮತ್ತು ಸಹಯೋಗವನ್ನು ನಿರೀಕ್ಷಿಸುವುದರ ಜೊತೆಗೆ ನಿಮಗೆ ಗೊತ್ತಿರುವವರು ಮತ್ತು ಸಂಪರ್ಕವಿರುವವರೊಂದಿಗೆ (among your networks ) ಈ ಮಾಹಿತಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳ ಬೇಕಾಗಿ ವಿನಂತಿಸಿ ಕೊಳ್ಳುತ್ತೇನೆ "
+msgid "Filling this form will also sign you up with the COVID Action Collaborative. This will provide you access to numerous resources in the form of tools, capacity building and foster critical joint efforts including fund-raising."
+msgstr " ಈ ಅರ್ಜಿಯನ್ನು ಭರ್ತಿ ಮಾಡುವುದರಿಂದ COVID ಆಕ್ಷನ್ ಸಹಯೋಗದೊಂದಿಗೆ ಕೈಜೋಡಿಸಿದಂತೆ. ಉಪಕರಣಗಳು, ಸಾಮರ್ಥ್ಯ ವೃದ್ಧಿ ಮತ್ತು ನಿಧಿಸಂಗ್ರಹಣೆ ಸೇರಿದಂತೆ ನಿರ್ಣಾಯಕ ಜಂಟಿ ಪ್ರಯತ್ನಗಳನ್ನು ರೂಪಿಸುವ ಹಲವಾರು ಸಂಪನ್ಮೂಲಗಳಿಗೆ ಇದು ನಿಮಗೆ ಪ್ರವೇಶವನ್ನು ಒದಗಿಸುತ್ತದೆ. "
 
 #: community_surveillance/templates/webapp/ngo_form.html:31
+msgid "If you know others who would like to contribute, please share this form."
+msgstr "ಸಹಾಯ ನೀಡಲು ಬಯಸುವರ ಇತರರ ವಿವರವನ್ನು ನೀವು ತಿಳಿದಿದ್ದರೆ, ದಯವಿಟ್ಟು ಈ ಅರ್ಜಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ "
+
+#: community_surveillance/templates/webapp/ngo_form.html:33
 msgid "Thank you."
-msgstr ""
+msgstr "ಧನ್ಯವಾದಗಳು "
 
-#: community_surveillance/templates/webapp/ngo_form.html:38
+#: community_surveillance/templates/webapp/ngo_form.html:40
 msgid "Please fill the details below:"
-msgstr "ದಯವಿಟ್ಟು ಕೆಳಗಿನ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ"
+msgstr "ದಯವಿಟ್ಟು ಕೆಳಗಿನ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ "
 
-#: community_surveillance/templates/webapp/ngo_form.html:48
+#: community_surveillance/templates/webapp/ngo_form.html:50
 msgid "Next"
-msgstr ""
+msgstr "ಮುಂದಿನ "
 
 #: webapp/forms.py:40
 msgid "1. Name of the Organization"
-msgstr "ಸಂಸ್ಥೆಯ ಹೆಸರು"
+msgstr " 1. ಸಂಸ್ಥೆಯ ಹೆಸರು"
 
 #: webapp/forms.py:41
 msgid "2. Name of Primary Contact of the Organization"
-msgstr "ಸಂಸ್ಥೆಯ ಪ್ರಾಥಮಿಕ ಸಂಪರ್ಕದ ಹೆಸರು"
+msgstr "ಸಂಸ್ಥೆಯನ್ನು ಪ್ರಾಥಮಿಕವಾಗಿ  ಸಂಪರ್ಕಿಸ ಬೇಕಾದರೆ  ಹೆಸರು "
 
 #: webapp/forms.py:42
 msgid "3. Email Id"
-msgstr "ಇ - ಮೇಲ್ ಐಡಿ"
+msgstr "ಇಮೇಲ್  ಐಡಿ  "
 
 #: webapp/forms.py:43
 msgid "4. Contact Phone Number"
-msgstr "ಸಂಪರ್ಕಿಸುವ  ದೂರವಾಣಿ ಸಂಖ್ಯೆ"
+msgstr "ದೂರವಾಣಿ ಸಂಖ್ಯೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ "
 
 #: webapp/forms.py:44
 msgid "5. Area of work of the organization"
-msgstr ""
+msgstr "ಸಂಸ್ಥೆಯ ಕೆಲಸದ ಪ್ರದೇಶಗಳು  "
 
 #: webapp/forms.py:45
-msgid ""
-"6. Does your organization work with any special needs’ group? (Select as "
-"many as applies)"
-msgstr ""
+msgid "6. Does your organization work with any special needs’ group? (Select as many as applies)"
+msgstr "ನಿಮ್ಮ ಸಂಸ್ಥೆ ಯಾವುದಾದರೂ  ವಿಶೇಷ ಅಗತ್ಯವಿರುವ  ಗುಂಪಿನೊಂದಿಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತಿದೆಯೇ ? (ಅನ್ವಯವಾಗುವಷ್ಟು ಆಯ್ಕೆಮಾಡಿ) "
 
 #: webapp/forms.py:46
-msgid ""
-"7. At what level, does your organization carry out direct implementation "
-"activities?"
-msgstr ""
+msgid "7. At what level, does your organization carry out direct implementation activities?"
+msgstr "  ನಿಮ್ಮ ಸಂಸ್ಥೆ ಯಾವ ಮಟ್ಟದಲ್ಲಿ ನೇರವಾಗಿ ತನ್ನ ಕಾರ್ಯ ಚಟುವಟಿಕೆಗಳನ್ನು  ನಿರ್ವಹಿಸುತ್ತಿದೆ ?"
 
 #: webapp/forms.py:47
-msgid ""
-"8. In which states or union territories does your organization carry out "
-"direct implementation activities? (If your organization is operational is in "
-"multiple states, select multiple)"
-msgstr ""
+msgid "8. In which states or union territories does your organization carry out direct implementation activities? (If your organization is operational is in multiple states, select multiple)"
+msgstr "ನಿಮ್ಮ ಸಂಸ್ಥೆಯಿಂದ ನೇರವಾಗಿ ಯಾವೆಲ್ಲ  ರಾಜ್ಯಗಳಲ್ಲಿ ಅಥವಾ ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶಗಳಲ್ಲಿ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತಿದೆ ? (ನಿಮ್ಮ ಸಂಸ್ಥೆ ಅನೇಕ ರಾಜ್ಯಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದ್ದರೆ ಬಹು ಆಯ್ಕೆಮಾಡಿ) "
+
 
 #: webapp/forms.py:53
-msgid ""
-"9. Please share the direct population reach of your organization on the "
-"ground"
-msgstr ""
+msgid "9. Please share the direct population reach of your organization on the ground"
+msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಂಸ್ಥೆಯಿಂದ ನೇರವಾಗಿ ಜನಗಳನ್ನು ತಲುಪಿರುವ  ಜನಸಂಖ್ಯೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ  "
 
 #: webapp/forms.py:54
-msgid ""
-"10. For the people you can reach, can you reach them in-person only or also "
-"remotely (via phones)"
-msgstr ""
+msgid "10. For the people you can reach, can you reach them in-person only or also remotely (via phones)"
+msgstr "ನೀವು ತಲುಪಬಹುದಾದ ಜನರಿಗೆ, ನೀವು ಅವರನ್ನು ವೈಯಕ್ತಿಕವಾಗಿ ಅಥವಾ ದೂರವಾಣಿ ಮೂಲಕ ಸಂಪರ್ಕಿಸಬಹುದೇ ? "
 
 #: webapp/forms.py:55
-msgid ""
-"11. How many ground-level, frontline staff do you have? (field staff, "
-"community outreach workers,  community volunteers)"
-msgstr ""
+msgid "11. How many ground-level, frontline staff do you have? (field staff, community outreach workers, community volunteers)"
+msgstr " ನಿಮ್ಮಲ್ಲಿ ಎಷ್ಟು ಕ್ಷೇತ್ರ  ಮಟ್ಟದಲ್ಲಿ ಕೆಲಸ ನಿರ್ವಹಿಸುವ ಸಿಬ್ಬಂದಿಗಳು ಮತ್ತು ತರ್ತು  ಅವಶ್ಯಕತೆ ಇದೆ ಎಂದಾಗ ಕೆಲಸ ನಿರ್ವಹಿಸಲು ಸಿಬ್ಬಂದಿ ಎಷ್ಟು ಇದ್ದಾರೆ ? "
 
 #: webapp/forms.py:56
-msgid ""
-"12. Does your team use mobile phones/tablets and internet services for day "
-"to day project operations? "
-msgstr ""
+msgid "12. Does your team use mobile phones/tablets and internet services for day to day project operations?"
+msgstr " ನಿಮ್ಮ ತಂಡವು ದಿನನಿತ್ಯದ ಕೆಲಸಗಳಿಗೆ  ಮೊಬೈಲ್ ಫೋನ್ / ಟ್ಯಾಬ್ಲೆಟ್‌ಗಳು ಮತ್ತು ಇಂಟರ್ನೆಟ್ ಸೇವೆಗಳನ್ನು ಬಳಸುತ್ತಾರೆಯೇ ?"
 
 #: webapp/forms.py:88
 msgid "Enter or Search the District where you have reach"
-msgstr ""
+msgstr " ನಿಮ್ಮ ಕೆಲಸದ ಮೂಲಕ ತಲುಪಿರುವ ಜಿಲ್ಲೆಯನ್ನು ನಮೂದಿಸಿ "
 
 #: webapp/forms.py:89
 msgid "Population reach in the selected District"
-msgstr ""
+msgstr " ಆಯ್ಕೆ ಮಾಡಿದ ಜಿಲ್ಲೆಗಳಲ್ಲಿನ ತಲುಪಬೇಕಾದ ಜನಸಂಖ್ಯೆ "
 
 #: webapp/models.py:89
 msgid "Health"
-msgstr ""
+msgstr "ಆರೋಗ್ಯ  "
 
 #: webapp/models.py:90
 msgid "Education"
-msgstr ""
+msgstr "ಶಿಕ್ಷಣ  "
+
 
 #: webapp/models.py:91
 msgid "Nutrition"
-msgstr ""
+msgstr "ಪೌಷ್ಠಿಕ ಆಹಾರ  "
 
 #: webapp/models.py:92
 msgid "Disability"
-msgstr ""
+msgstr "ವಿಶೇಷ ಸಾಮರ್ಥ್ಯವುಳ್ಳವರು  "
 
 #: webapp/models.py:93
 msgid "WASH"
-msgstr ""
+msgstr "ಶುದ್ಧ ನೀರು, ನೈರ್ಮಲ್ಯ ಮತ್ತು ಸ್ವಚ್ಛತೆ  "
 
 #: webapp/models.py:94
 msgid "Livelihoods"
-msgstr ""
+msgstr " ಜೀವನೋಪಾಯ"
 
 #: webapp/models.py:95
 msgid "Financial Services"
-msgstr ""
+msgstr "ಹಣಕಾಸಿನ ಸೇವೆಗಳು "
 
 #: webapp/models.py:96 webapp/models.py:125
 msgid "Others"
-msgstr ""
+msgstr "ಬೇರೆಯವರು  "
 
 #: webapp/models.py:102
 msgid "State"
-msgstr ""
+msgstr "ರಾಜ್ಯ "
 
 #: webapp/models.py:102
 msgid "District"
-msgstr ""
+msgstr " ಜಿಲ್ಲೆ "
 
 #: webapp/models.py:102
 msgid "Block"
-msgstr ""
+msgstr "ಬ್ಲಾಕ್  "
 
 #: webapp/models.py:102
 msgid "City"
-msgstr ""
+msgstr " ನಗರ "
 
 #: webapp/models.py:102
 msgid "Taluk/Tehsil"
-msgstr ""
+msgstr "ತಾಲೂಕು  "
 
 #: webapp/models.py:102
 msgid "Other"
-msgstr ""
+msgstr "ಇತರೆಯವರು  "
 
 #: webapp/models.py:107
 msgid "No, we do not work with any special needs group"
-msgstr ""
+msgstr "ಇಲ್ಲ, ನಾವು ಯಾವುದೇ ವಿಶೇಷ ಅಗತ್ಯವಿರುವ ಗುಂಪಿನೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ "
 
 #: webapp/models.py:108
 msgid "People with mental illness"
-msgstr ""
+msgstr "ಮಾನಸಿಕ ಅಸ್ವಸ್ಥತೆವುಳ್ಳ ಜನಗಳು  "
 
 #: webapp/models.py:109
 msgid "People with hearing loss"
-msgstr ""
+msgstr "ಶ್ರವಣ ಸಾಮರ್ಥ್ಯವಿಲ್ಲದ ಜನಗಳು  "
 
 #: webapp/models.py:110
 msgid "People with physical disabilities"
-msgstr ""
+msgstr "ದೈಹಿಕ ಅಂಗವೈಕಲ್ಯ ಹೊಂದಿರುವ ಜನರು "
 
 #: webapp/models.py:111
 msgid "People with intellectual disabilities"
-msgstr ""
+msgstr " ಬೌದ್ಧಿಕ ವಿಕಲಾಂಗ ಜನರು "
 
 #: webapp/models.py:112
 msgid "People living with HIV/AIDS"
-msgstr ""
+msgstr " ಎಚ್.ಐ.ವಿ/ಏಡ್ಸ್ ನೊಂದಿಗೆ ವಾಸಿಸುತ್ತಿರುವ ಜನಗಳು "
 
 #: webapp/models.py:113
 msgid "Sex Workers"
-msgstr ""
+msgstr "ಲೈಂಗಿಕ ಕಾರ್ಯಕರ್ತೆಯರು  "
 
 #: webapp/models.py:114
 msgid "Injective Drug Users"
-msgstr ""
+msgstr " ಚುಚ್ಚುಮದ್ದು  ಮತ್ತು ಔಷಧ ಬಳಕೆದಾರರು  "
+
 
 #: webapp/models.py:115
 msgid "MSM and Trans People"
-msgstr ""
+msgstr " ಎಂ.ಎಸ್.ಎಮ್ ಮತ್ತು ತೃತೀಯ ಲಿಂಗಿಗಳ ಜನಸಂಖ್ಯೆ "
 
 #: webapp/models.py:116
-msgid ""
-"People living with chronic illness such as cancer, heart ailments, are "
-"immune-compromised"
-msgstr ""
+msgid "People living with chronic illness such as cancer, heart ailments, are immune-compromised"
+msgstr "ಕ್ಯಾನ್ಸರ್, ಹೃದಯ ಕಾಯಿಲೆಯಂತಹ ದೀರ್ಘಕಾಲದ ಕಾಯಿಲೆ ಹೊಂದಿರುವವರು ಮತ್ತು  ದುರ್ಬಲ ರೋಗ ನಿರೋಧಕ ಶಕ್ತಿ ಇರುವವರು  "
 
 #: webapp/models.py:117
 msgid "Elderly"
-msgstr ""
+msgstr "  ಹಿರಿಯರು"
 
 #: webapp/models.py:118
 msgid "Tribal population"
-msgstr ""
+msgstr " ಬುಡಕಟ್ಟು ಜನಸಂಖ್ಯೆ"
 
 #: webapp/models.py:119
 msgid "Rural poor"
-msgstr ""
+msgstr " ಗ್ರಾಮೀಣ ಬಡವರು  "
 
 #: webapp/models.py:120
 msgid "Urban poor"
-msgstr ""
+msgstr " ನಗರದ  ಬಡವರು "
 
 #: webapp/models.py:122
 msgid "Migrant labourers"
-msgstr ""
+msgstr "ವಲಸೆ ಕಾರ್ಮಿಕರು "
 
 #: webapp/models.py:123
 msgid "Hospice/homes/orphanages/shelters"
-msgstr ""
+msgstr " ಪ್ರವಾಸಿ ಮಂದಿರ/ ಮನೆಗಳು / ಅನಾಥಾಶ್ರಮಗಳು / ಆಶ್ರಯಗಳು "
 
 #: webapp/models.py:124
 msgid "Homeless"
-msgstr ""
+msgstr " ಮನೆಯಿಲ್ಲದವರು "
 
 #: webapp/models.py:140
 msgid "In Person Only"
-msgstr ""
+msgstr " ವೈಯಕ್ತಿಕವಾಗಿ  ಮಾತ್ರ  "
+
 
 #: webapp/models.py:140
 msgid "Remote Only via phones"
-msgstr ""
+msgstr " ದೂರದಲ್ಲಿ ಇದ್ದವರಿಗೆ ಫೋನಿನ ಮೂಲಕ ಮಾತ್ರ"
+
+
 
 #: webapp/models.py:140
 msgid "Both in Person & Remotely via phones"
-msgstr ""
+msgstr "ವೈಯಕ್ತಿಕವಾಗಿ ಮತ್ತು ವ್ಯಕ್ತಿ ದೂರದಲ್ಲಿ ಇದ್ದರೆ ಫೋನಿನ ಮೂಲಕ  "
 
 #: webapp/models.py:168
 msgid "less than 1000 people"
-msgstr ""
+msgstr "1000 ಕ್ಕಿಂತ ಕಡಿಮೆ ಜನರು "
 
 #: webapp/models.py:168
 msgid "1000 to 10,000 people"
-msgstr ""
+msgstr "1000 ರಿಂದ 10,000 ಜನರು "
 
 #: webapp/models.py:168
 msgid "10,000 to 50,000 people"
-msgstr ""
+msgstr " 10,000 ದಿಂದ 50,000 ಜನರು"
 
 #: webapp/models.py:168
 msgid "more than 50,000 people"
-msgstr ""
-
-
+msgstr "  50,000 ಕ್ಕಿಂತ ಹೆಚ್ಚು ಜನರು  "

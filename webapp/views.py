@@ -17,6 +17,20 @@ def index(request):
 	return render(request, 'webapp/index.html', {})
 
 
+def select_language_for_form(request):
+	langs = [
+		["English", "en-us"], 
+		["हिन्दी (Hindi)", "hi"], 
+		["ಕನ್ನಡ (Kannada)", "kn"], 
+		["বাংলা (Bengali)","bn"],
+		# ["தமிழ் (Tamil)","ta"],
+		["മലയാളം (Malayalam)","ml"],  
+		# ["தெலுங்கு (Telugu)","te"],  
+	]
+	return render(request, 'webapp/select_language_for_form.html',{"langs": langs})
+
+
+
 def ngo_create(request):
 	if request.method == "POST":
 		form = NgoForm(request.POST)

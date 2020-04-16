@@ -15,6 +15,8 @@ urlpatterns = [
     path('ngo/details/', ngo_details, name='ngo_details'),
     path('ngo_district_list_and_form/', ngo_district_list_and_form, name='ngo_district_list_and_form'),
 
+    path('select_language_for_form/', select_language_for_form, name='select_language_for_form'),
+
 
     
     # path('supplies_estimator', supplies_estimator, name='supplies_estimator'),
