@@ -53,7 +53,7 @@ class NgoForm(ModelForm):
             'population_reach': _('9. Please share the direct population reach of your organization on the ground'),
             'medium_of_reach': _('10. For the people you can reach, can you reach them in-person only or also remotely (via phones)'),
             'staff_count': _('11. How many ground-level, frontline staff do you have? (field staff, community outreach workers, community volunteers)'),
-            'does_staff_use_phones': _('12. Does your team use mobile phones/tablets and internet services for day to day project operations? '),
+            'does_staff_use_phones': _('12. Does your team use mobile phones/tablets and internet services for day to day project operations?'),
             # 'staff_languages': '14. What languages does your team speak, read and write it? (List All)',
             # 'pincode': '14. Please provide the postal pin codes of your organization’s head quarter and all office locations from where you function (comma separated)'
 

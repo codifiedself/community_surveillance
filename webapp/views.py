@@ -23,7 +23,7 @@ def select_language_for_form(request):
 		["हिन्दी (Hindi)", "hi"], 
 		["ಕನ್ನಡ (Kannada)", "kn"], 
 		["বাংলা (Bengali)","bn"],
-		# ["தமிழ் (Tamil)","ta"],
+		["தமிழ் (Tamil)","ta"],
 		["മലയാളം (Malayalam)","ml"],  
 		# ["தெலுங்கு (Telugu)","te"],  
 	]

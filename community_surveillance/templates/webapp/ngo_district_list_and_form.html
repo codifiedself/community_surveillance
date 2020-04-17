@@ -20,7 +20,7 @@
 
     <h3><br/>{% trans "One more question" %}</h3>
 
-    <p>{% trans "Please list all districts in which your organization has been carrying out direct implementation activities. * (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)" %}</p>
+    <p>{% trans "Please list all districts in which your organization has been carrying out direct implementation activities. (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)" %}</p>
   </div>
 
   <div class="row">
@@ -38,7 +38,7 @@
             </table>
         {% endfor %}
     </div>
-    <input type="button" class="btn btn-outline-primary" value="Add another District of implementation" id="add_more">
+    <input type="button" class="btn btn-outline-primary" value="{% trans 'Add another District of implementation' %}"  id="add_more">
     <input type="hidden" value="{{ngo_id}}" id="ngo_id">
     <div id="empty_form" style="display:none">
         <table class='no_error'>

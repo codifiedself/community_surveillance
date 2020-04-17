@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-15 16:05+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: community_surveillance/templates/webapp/form_thankyou.html:11
+msgid "Thank You"
+msgstr "நன்றி"
+
+#: community_surveillance/templates/webapp/form_thankyou.html:14
+msgid "Thank you for your time and sharing this information with us. We will get in touch with you with resources/information on COVID-19 response as and when they come. In the mean time please access all available resources at"
+msgstr " உங்கள் நேரத்திற்கும் இந்த தகவலை எங்களுடன் பகிர்ந்து கொண்டமைக்கும் நன்றி. COVID – 19 தொடர்பாக மேலும்ஆதாரங்கள் / தகவல்கள் நாங்கள் பெறும் போது உங்களுடன் தொடர்புகொள்வோம். இதற்கிடையில் கிடைக்கக்கூடிய எல்லா வளங்களையும் இங்கே பெறுங்கள்"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:21
+msgid "One more question"
+msgstr " இன்னும் ஒரு கேள்வி"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:23
+msgid "Please list all districts in which your organization has been carrying out direct implementation activities. (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)"
+msgstr " தயவு செய்து உங்கள் அமைப்பு நேரடியாக செயல்படும் எல்லா மாவட்டங்களையும் பட்டியலிடுங்கள் (உங்கள் அமைப்பு பல மாவட்டங்களில் செயல்பட்டால், மற்றொரு மாவட்டத்தைச் சேர்க்கவும் என்ற பொத்தானை உபயோகபடுத்தி கூடுதல் மாவட்டத்தைச் சேர்க்கவும்"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:41
+msgid "Add another District of implementation"
+msgstr "மற்றொரு மாவட்டத்தைச் சேர்க்கவும்"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:51
+msgid "Save All District Information"
+msgstr "அனைத்து மாவட்ட தகவல்களையும் சேமிக்கவும்"
+
+#: community_surveillance/templates/webapp/ngo_form.html:17
+msgid "The COVID-19 NGO/CBO with Direct Reach Collaboration Sign Up Form"
+msgstr " COVID-19 அரசு சாரா நிறுவனம் / சமூக அடிப்படையிலான நிறுவனங்கள் நேரடி அணுகல் ஒத்துழைப்பு பதிவு படிவத்துடன் "
+
+#: community_surveillance/templates/webapp/ngo_form.html:21
+msgid "Calling all non-profits and community-based organisations working directly with vulnerable communities to join this collaborative effort to fight COVID-19. Together, we can REACH the UNREACHED."
+msgstr " COVID-19 ஐ எதிர்த்துப் போராடுவதற்கான இந்த கூட்டு முயற்சியில் சேர, பாதிக்கப்படக்கூடிய சமூகங்களுடன் நேரடியாகப் பணிபுரியும் அனைத்து இலாப நோக்கற்ற மற்றும் சமூக அடிப்படையிலான அமைப்புகளையும் அழைக்கிறது."
+
+#: community_surveillance/templates/webapp/ngo_form.html:24
+msgid "COVID-19 has a serious impact on the health and livelihood of the communities you serve. The need of the hour is reliable data from the ground that supports the current relief activities, along with trusted, established channels that can relay critical information back to the communities (example community surveillance, testing and telephone counselling etc)."
+msgstr " COVID-19 நீங்கள் சேவை செய்யும் சமூகங்களின் ஆரோக்கியம் மற்றும் வாழ்வாதாரத்தில் கடுமையான தாக்கத்தை ஏற்படுத்துகிறது. தற்போதைய தேவை களத்திலிருந்து நிவாரண நடவடிக்கைகளுக்கு உதவும் நம்பகமான தகவல், நம்பகமான நிறுவப்பட்ட சேனல்களுடன், முக்கியமான தகவல்களை மீண்டும் சமூகங்களுக்கு அனுப்ப முடியும் (எடுத்துக்காட்டாக சமூக கண்காணிப்பு, சோதனை மற்றும் தொலைபேசி ஆலோசனை போன்றவை)"
+
+#: community_surveillance/templates/webapp/ngo_form.html:26
+msgid "If you are keen on collaborating on reaching communities directly for action against COVID-19, please fill this form. It will take you around 10 minutes. This effort is aimed towards a coordinated and comprehensive on-ground COVID response in communities in partnership with local governments."
+msgstr " COVID-19 க்கு எதிரான நடவடிக்கைகளுக்காக சமூகங்களை நேரடியாக அடைவதற்கு நீங்கள் ஒத்துழைக்க ஆர்வமாக இருந்தால், தயவுசெய்து இந்த படிவத்தை நிரப்பவும். இது உங்களுக்கு 10 நிமிடங்கள் எடுக்கும். "
+
+#: community_surveillance/templates/webapp/ngo_form.html:29
+msgid "Filling this form will also sign you up with the COVID Action Collaborative. This will provide you access to numerous resources in the form of tools, capacity building and foster critical joint efforts including fund-raising."
+msgstr " இந்த படிவத்தை நிரப்புவது COVID செயல் கூட்டுடன்  பதிவுபெறும். இது ஏராளமான ஆதாரங்களுக்கான கருவிகள், திறன் மேம்பாடு மற்றும் நிதி திரட்டுதல் உள்ளிட்ட முக்கியமான கூட்டு முயற்சிகளை வளர்ப்பதற்க்கான ஆதாரங்களுக்கான அணுகலை உங்களுக்கு வழங்கும்."
+
+#: community_surveillance/templates/webapp/ngo_form.html:31
+msgid "If you know others who would like to contribute, please share this form."
+msgstr " பங்களிக்க விரும்பும் மற்றவர்களை நீங்கள் அறிந்தால், தயவுசெய்து இந்த படிவத்தைப் பகிரவும். "
+
+#: community_surveillance/templates/webapp/ngo_form.html:33
+msgid "Thank you."
+msgstr " நன்றி"
+
+#: community_surveillance/templates/webapp/ngo_form.html:40
+msgid "Please fill the details below:"
+msgstr " கீழே உள்ள விவரங்களை நிரப்பவும்: "
+
+#: community_surveillance/templates/webapp/ngo_form.html:50
+msgid "Next"
+msgstr " அடுத்தது "
+
+#: webapp/forms.py:40
+msgid "1. Name of the Organization"
+msgstr " நிறுவனத்தின் பெயர் "
+
+#: webapp/forms.py:41
+msgid "2. Name of Primary Contact of the Organization"
+msgstr " நிறுவனத்தின் முதன்மை தொடர்பு பெயர் "
+
+#: webapp/forms.py:42
+msgid "3. Email Id"
+msgstr " மின்னஞ்சல் முகவரி "
+
+#: webapp/forms.py:43
+msgid "4. Contact Phone Number"
+msgstr " தொடர்பு தொலைபேசி எண் "
+
+#: webapp/forms.py:44
+msgid "5. Area of work of the organization"
+msgstr " நிறுவனத்தின் பணி பகுதி "
+
+#: webapp/forms.py:45
+msgid "6. Does your organization work with any special needs’ group? (Select as many as applies)"
+msgstr " உங்கள் அமைப்பு ஏதேனும் சிறப்புத் தேவைகள் குழுவுடன் செயல்படுகிறதா?"
+
+#: webapp/forms.py:46
+msgid "7. At what level, does your organization carry out direct implementation activities?"
+msgstr " எந்த மட்டத்தில், உங்கள் அமைப்பு நேரடி செயல்படுத்தல் நடவடிக்கைகளை மேற்கொள்கிறது? "
+
+#: webapp/forms.py:47
+msgid "8. In which states or union territories does your organization carry out direct implementation activities? (If your organization is operational in multiple states, select multiple)"
+msgstr " எந்த மாநிலங்களில் அல்லது யூனியன் பிரதேசங்களில் உங்கள் நிறுவனம் நேரடியாக செயல்படுத்தும் நடவடிக்கைகளை மேற்கொள்கிறது? உங்கள் நிறுவனம் பல மாநிலங்களில் செயல்பட்டால், பல  தேர்ந்தெடுக்கவும் "
+
+#: webapp/forms.py:53
+msgid "9. Please share the direct population reach of your organization on the ground"
+msgstr " உங்கள் நிறுவனத்தின் நேரடி மக்கள் தொகையை பகிர்ந்து கொள்ளுங்கள் "
+
+#: webapp/forms.py:54
+msgid "10. For the people you can reach, can you reach them in-person only or also remotely (via phones)"
+msgstr " நீங்கள் அடையக்கூடிய நபர்களை நீங்கள் நேரில்-மட்டும் அல்லது தொலைதூரத்தில் (தொலைபேசிகள் வழியாக) அடைய முடியுமா "
+
+#: webapp/forms.py:55
+msgid "11. How many ground-level, frontline staff do you have? (field staff, community outreach workers, community volunteers)"
+msgstr " உங்களுடன் எத்தனை கள மட்டம், முன்னணி ஊழியர்கள் உள்ளனர்? (கள ஊழியர்கள், community outreach workers மற்றும் சமூக தன்னார்வளர்கள்) "
+
+#: webapp/forms.py:56
+msgid "12. Does your team use mobile phones/tablets and internet services for day to day project operations?"
+msgstr " உங்கள் குழு மொபைல் போன்கள் / டேப்லெட்டுகள் மற்றும் இணைய சேவைகளை அன்றாட திட்ட நடவடிக்கைகளுக்கு பயன்படுத்துகிறதா? "
+
+#: webapp/forms.py:88
+msgid "Enter or Search the District where you have reach"
+msgstr " நீங்கள் சென்றடைந்த மாவட்டத்தை உள்ளிடவும் அல்லது தேடவும் "
+
+#: webapp/forms.py:89
+msgid "Population reach in the selected District"
+msgstr " தேர்ந்தெடுக்கப்பட்ட மாவட்டத்தில் அடையும் மக்கள் தொகை "
+
+#: webapp/models.py:89
+msgid "Health"
+msgstr " ஆரோக்கியம் "
+
+#: webapp/models.py:90
+msgid "Education"
+msgstr " கல்வி "
+
+#: webapp/models.py:91
+msgid "Nutrition"
+msgstr " ஊட்டச்சத்து "
+
+#: webapp/models.py:92
+msgid "Disability"
+msgstr " இயலாமை "
+
+#: webapp/models.py:93
+msgid "WASH"
+msgstr " நீர் மற்றும் சுகாதார சுகாதாரம்"
+
+#: webapp/models.py:94
+msgid "Livelihoods"
+msgstr " வாழ்வாதாரங்கள் "
+
+#: webapp/models.py:95
+msgid "Financial Services"
+msgstr " நிதி சேவைகள் "
+
+#: webapp/models.py:96 webapp/models.py:125
+msgid "Others"
+msgstr " மற்றவை "
+
+#: webapp/models.py:102
+msgid "State"
+msgstr " மாநிலம் "
+
+#: webapp/models.py:102
+msgid "District"
+msgstr " மாவட்டம் "
+
+#: webapp/models.py:102
+msgid "Block"
+msgstr " தொகுதி"
+
+#: webapp/models.py:102
+msgid "City"
+msgstr " நகரம் "
+
+#: webapp/models.py:102
+msgid "Taluk/Tehsil"
+msgstr " தாலுகா "
+
+#: webapp/models.py:102
+msgid "Other"
+msgstr " மற்றவை "
+
+#: webapp/models.py:107
+msgid "No, we do not work with any special needs group"
+msgstr " இல்லை நாங்கள் எந்த சிறப்பு தேவைகள் உள்ள மக்களுடன் பணியாற்றுவதில்லை "
+
+#: webapp/models.py:108
+msgid "People with mental illness"
+msgstr " மனநோயால் பாதிக்கப்பட்டவர்கள் "
+
+#: webapp/models.py:109
+msgid "People with hearing loss"
+msgstr " காது கேளாமை உள்ளவர்கள் "
+
+#: webapp/models.py:110
+msgid "People with physical disabilities"
+msgstr " உடல் குறைபாடுகள் உள்ளவர்கள் "
+
+#: webapp/models.py:111
+msgid "People with intellectual disabilities"
+msgstr " அறிவார்ந்த குறைபாடுகள் உள்ளவர்கள் "
+
+#: webapp/models.py:112
+msgid "People living with HIV/AIDS"
+msgstr " எச்.ஐ.வி / எய்ட்ஸ் நோயால் பாதிக்கப்பட்ட மக்கள் "
+
+#: webapp/models.py:113
+msgid "Sex Workers"
+msgstr " பாலியல் தொழிலாளர்கள் "
+
+#: webapp/models.py:114
+msgid "Injective Drug Users"
+msgstr " ஊசி மருந்து பயனர்கள் "
+
+#: webapp/models.py:115
+msgid "MSM and Trans People"
+msgstr "எம்.எஸ்.எம் மற்றும் திருநங்கைகள் "
+
+#: webapp/models.py:116
+msgid "People living with chronic illness such as cancer, heart ailments, are immune-compromised"
+msgstr " புற்றுநோய், இதய நோய்கள், நோய் எதிர்ப்பு சக்தி குறைபாடுகள் போன்ற நாள்பட்ட நோயுடன் வாழும் மக்கள் "
+
+#: webapp/models.py:117
+msgid "Elderly"
+msgstr " முதியவர்கள் "
+
+#: webapp/models.py:118
+msgid "Tribal population"
+msgstr " பழங்குடி மக்கள் "
+
+#: webapp/models.py:119
+msgid "Rural poor"
+msgstr " கிராமப்புற ஏழைகள் "
+
+#: webapp/models.py:120
+msgid "Urban poor"
+msgstr " நகர்ப்புற ஏழைகள் "
+
+#: webapp/models.py:122
+msgid "Migrant labourers"
+msgstr " புலம்பெயர்ந்த தொழிலாளர்கள் "
+
+#: webapp/models.py:123
+msgid "Hospice/homes/orphanages/shelters"
+msgstr " நல்வாழ்வு மையம் / வீடுகள் / அனாதை இல்லங்கள் / தங்குமிடங்கள் "
+
+#: webapp/models.py:124
+msgid "Homeless "
+msgstr " வீடற்றவர்கள் "
+
+#: webapp/models.py:140
+msgid "In Person Only"
+msgstr " நேரில் மட்டுமே "
+
+#: webapp/models.py:140
+msgid "Remote Only via phones"
+msgstr " தொலைவிலிருந்து தொலைபேசிகள் வழியாக "
+
+#: webapp/models.py:140
+msgid "Both in Person & Remotely via phones"
+msgstr " நேரில் மற்றும் தொலைவிலிருந்து தொலைபேசிகள் வழியாக"
+
+#: webapp/models.py:168
+msgid "less than 1000 people"
+msgstr " 1000 க்கும் குறைவான மக்கள் "
+
+#: webapp/models.py:168
+msgid "1000 to 10,000 people"
+msgstr "1000 முதல் 10,000 பேர் "
+
+#: webapp/models.py:168
+msgid "10,000 to 50,000 people"
+msgstr "10,000 முதல் 50,000 பேர் "
+
+#: webapp/models.py:168
+msgid "more than 50,000 people"
+msgstr " 50,000 க்கும் மேற்பட்ட மக்கள் "
+
+

@@ -34,6 +34,10 @@ msgstr " ഒരു ചോദ്യം കൂടി "
 msgid "Please list all districts in which your organization has been carrying out direct implementation activities. (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)"
 msgstr " നിങ്ങളുടെ സംഘടനയുടെ പ്രവർത്തനം നടക്കുന്ന ജില്ല, അല്ലെങ്കിൽ ജില്ലകളുടെയെല്ലാം, പേര് രേഖപ്പെടുത്തുക.  (നിങ്ങളുടെ ഓർ‌ഗനൈസേഷൻ‌ ഒന്നിലധികം ജില്ലകളിൽ‌ പ്രവർ‌ത്തിക്കുന്നുണ്ടെങ്കിൽ‌, മറ്റൊരു ജില്ലയെ നടപ്പിലാക്കുക ബട്ടൺ‌ ഉപയോഗിച്ച് ഒന്നിലധികം ചേർ‌ക്കുക) "
 
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:41
+msgid "Add another District of implementation"
+msgstr " മറ്റൊരു ജില്ല ചേർക്കുക"
+
 #: community_surveillance/templates/webapp/ngo_district_list_and_form.html:51
 msgid "Save All District Information"
 msgstr " എല്ലാ ജില്ലാ വിവരങ്ങളും സംരക്ഷിക്കുക "

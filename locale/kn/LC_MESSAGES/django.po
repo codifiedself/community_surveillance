@@ -36,6 +36,10 @@ msgstr "ಮತ್ತೊಂದು ಪ್ರಶ್ನೆ"
 msgid "Please list all districts in which your organization has been carrying out direct implementation activities. (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)"
 msgstr " ನಿಮ್ಮ ಸಂಸ್ಥೆ ಯಾವ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ನೇರವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ ಎಲ್ಲಾ ಜಿಲ್ಲೆಗಳನ್ನು ಪಟ್ಟಿಮಾಡಿ   (ನಿಮ್ಮ ಸಂಸ್ಥೆ ಅನೇಕ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದ್ದರೆ, ಹೆಚ್ಚು ಆಯ್ಕೆಮಾಡಿ)"
 
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:41
+msgid "Add another District of implementation"
+msgstr "ಮತ್ತೊಂದು ಜಿಲ್ಲೆಯನ್ನು ಸೇರಿಸಿ"
+
 #: community_surveillance/templates/webapp/ngo_district_list_and_form.html:51
 msgid "Save All District Information"
 msgstr " ಎಲ್ಲಾ ಜಿಲ್ಲೆಯ ಮಾಹಿತಿಯನ್ನು  ಇಟ್ಟುಕೊಂಡ್ಡಿರುವುದು "

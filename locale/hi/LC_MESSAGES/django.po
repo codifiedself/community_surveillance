@@ -32,7 +32,11 @@ msgstr "एक और प्रश्न"
 
 #: community_surveillance/templates/webapp/ngo_district_list_and_form.html:23
 msgid "Please list all districts in which your organization has been carrying out direct implementation activities. (If your organization is operational in multiple districts, please add multiple using the Add another District of implementation button)"
-msgstr "8. आपके संगठन किन जिला में प्रत्यक्ष कार्यान्वयन गतिविधियाँ करते हैं? * (यदि संगठन कई जिला में कार्यरत है तो एक से अधिक चयन करें)"
+msgstr "आपके संगठन किन जिला में प्रत्यक्ष कार्यान्वयन गतिविधियाँ करते हैं? (यदि संगठन कई जिला में कार्यरत है तो एक से अधिक चयन करें)"
+
+#: community_surveillance/templates/webapp/ngo_district_list_and_form.html:41
+msgid "Add another District of implementation"
+msgstr "एक और जिला जोड़ें"
 
 #: community_surveillance/templates/webapp/ngo_district_list_and_form.html:51
 msgid "Save All District Information"
