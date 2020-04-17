@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Montserrat;
+	font-weight: 400;
+	font-size: 16px;
+}
+.main {
+  height: calc(100vh - 4rem);
+  /* overflow: hidden; */
+  grid-template-columns: 16rem 1fr 20rem;
+}
+
+#mapIndia1 { 
+  height: calc(100vh - 4rem); 
+  width: 100%;
+}
+
+.left-sidebar {
+  grid-template-rows: 4rem 4rem calc(100vh - 12rem);
+}
+
+.right-sidebar {
+  height: calc(100vh-4rem);
+}

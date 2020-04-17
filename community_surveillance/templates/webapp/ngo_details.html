@@ -1,5 +1,4 @@
-
-{% extends 'base.html' %}
+{% extends 'map.html' %}
 {% load static %}
 
 {% block content %}
@@ -8,17 +7,6 @@
 
 <!-- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script> -->
 <script type="text/javascript" src="{% static 'webapp/js/leaflet-src.js' %}"></script>
-
-
-<style type="text/css">  
-  #mapIndia1 { 
-    margin: auto;
-    height: 90vh; 
-    width: 560px;
-  }
-
-</style>
-
 <script type="text/javascript" src="{% static 'webapp/js/states.js' %}"></script>
 <script type="text/javascript" src="{% static 'webapp/js/districts.js' %}"></script>
 
@@ -27,42 +15,24 @@
   var districts_geojson = {};
   var active_state_layer;
 </script>
-<!-- 
-<div class="row">
-  <div class="col-12 mt-3 mb-3">
-    <h5 style="text-align: center;">State & District-wise data of NGOs</h5>
-  </div>
-</div> -->
 
 
-<div class="row">
+<div class="main grid grid-cols-3">
+  <div class="border- grid-rows-3 left-sidebar overflow-hidden grid">
+    <h2 class="text-l font-semibold px-2 py-4 border-b border-gray-300">NGO data</h2>
+    <!-- <p class="description">Click on any state below to get its NGO data on the right side</p> -->
 
-  <div class="col-md-3 left-bar">
-    <div class="dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-    <h5>State-wise NGO data</h5>
-    <p class="description">Click on any state below to get its NGO data on the right side</p>
+    <button class="w-full py-2 text-left px-2 text-sm" id="india_link" type="button" data-toggle="collapse" data-target="#collapse_india" aria-expanded="true" aria-controls="collapse_india">
+      All India
+    </button>
 
-        <div class="list-group-item mb-2" style="border:1px solid #ccc;">
-          <button class="btn" id="india_link" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse_india}" aria-expanded="true" aria-controls="collapse_india">
-            <span class="btn-link">All India</span> <br/> 
-          </button>
-        </div>
-
-
-
-    <ul class="list-group list-group-flush addscroll">
-
+    <ul class="block h-full overflow-auto border-t border-gray-300">
 
       {% for key, value in all_data.items %}
 
-        <li class="list-group-item">
-          <button class="btn" id="statelink_{{forloop.counter}}" style="width: 100%;text-align: left;height: 40px" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-            <span class="btn-link">{{key|title}} ({{value.ngo_count}})</span> <br/> 
+        <li class="list-group-item pl-6 py-2">
+          <button class="text-sm w-full text-left leading-loose py-1" id="statelink_{{forloop.counter}}" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+            </span>{{key|title}} ({{value.ngo_count}})
           </button>
         </li>
 
@@ -84,22 +54,21 @@
     </ul>
   </div>
 
-  <div class="col-6 mt-7">
+  <div class="">
     <div id="mapIndia1"></div>
   </div>
 
-
-  <div class="col-3 mt-7">
+  <div class="right-sidebar overflow-auto">
       {% for key, value in all_data.items %}
-        <div class="collapse district_data" id="collapse{{forloop.counter}}">
-            <div class="card card-body mb-4 state_data">
-                <h6>{{key}}</h6> 
+        <div class="district_data mb-16" id="collapse{{forloop.counter}}">
+            <div class="text-sm p-4 mb-2 bg-gray-100 border-b border-t border-gray-400">
+              <h6 class="font-semibold">{{key}}</h6>  
               Total NGOs: {{value.ngo_count}} <br/>
               Population reach: {{value.population_reach}} <br/> 
               Staff count: {{value.staff_count}} <br/>
               <!-- <a href="" class="btn-link"> See all NGOs in {{key}} </a> -->
             </div>
-            <h6>&nbsp;District wise details</h6>
+            <h6 class="font-semibold px-4 font-sm">District wise details</h6>
 
             <script type="text/javascript">
               districts_geojson["{{key}}"] = [];
@@ -107,7 +76,8 @@
 
             <div class="districts_data">
               {% for district in value.districts %}
-              <div class="card card-body mb-2">
+
+              <div class=" text-sm m-2 p-2 border border-gray-300">
                   <h6>{{district.0}}</h6> 
                 Total NGOs: {{district.1}} <br/>
                 Population reach: {{district.2}} <br/> 

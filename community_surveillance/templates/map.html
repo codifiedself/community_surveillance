@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/map.css' %}">
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+    {{ form.media.css }}
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://swasti.org/wp-content/themes/swasti/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://swasti.org/wp-content/themes/swasti/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://swasti.org/wp-content/themes/swasti/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://swasti.org/wp-content/themes/swasti/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://swasti.org/wp-content/themes/swasti/favicon/favicon-16x16.png">
+
+
+
+    <title>{% block title %} Tools | Swasti {% endblock %}</title>
+  </head>
+  <body>
+    <header class="h-16 col-start-1 flex col-end-4 border-b border-gray-300">
+      <a class="h-full px-4 flex-1" href="https://swasti.org">
+        <img src="https://swasti.org/wp-content/themes/swasti/img/logo.png" alt="" class="h-full">
+      </a>
+      <nav class="flex-1 text-right py-4 pr-6 leading-loose">
+        <a class="mx-2 text-sm text-blue-800" href="https://swasti.org">Home</a>
+        <a class="mx-2 text-sm bg-blue-800 text-white inline-block px-2 rounded-md" href="/">Tools</a>
+      </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    {{ form.media.js }}
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'webapp/js/main.js' %}"></script>
+  </body>
+</html>
