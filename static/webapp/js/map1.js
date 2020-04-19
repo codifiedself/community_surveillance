@@ -67,7 +67,7 @@
   	layer_list[feature.properties.name] = layer;
     layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.name + '</b></span> <br/> \
       <b style="color:#333">Total NGOs</b>:&nbsp;' + feature.properties.ngo_count + '<br/>\
-      <b style="color:#333">Population reach</b>:&nbsp;' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
+      <b style="color:#333">Population reach</b>:&nbsp;' + feature.properties.population_reach + '&nbsp;(approx)&nbsp;&nbsp;&nbsp; \
       <b style="color:#333">Staff count</b>:&nbsp;'+ feature.properties.staff_count);
 
 
@@ -82,7 +82,7 @@
   function onEachFeatureInState(feature, layer) {
     layer.bindPopup('<span class="btn-link"><b>'+ feature.properties.name + '</b></span> <br/> \
       <b style="color:#333">Total NGOs</b>:&nbsp;' + feature.properties.ngo_count + '<br/>\
-      <b style="color:#333">Population reach</b>:&nbsp;' + feature.properties.population_reach + '&nbsp;&nbsp;&nbsp;&nbsp; \
+      <b style="color:#333">Population reach</b>:&nbsp;' + feature.properties.population_reach + '&nbsp;(approx)&nbsp;&nbsp;&nbsp; \
       <b style="color:#333">Staff count</b>:&nbsp;'+ feature.properties.staff_count);
 
 
