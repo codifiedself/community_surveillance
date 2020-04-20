@@ -166,7 +166,7 @@ class NgoDistrict(models.Model):
 	ngo = models.ForeignKey(Ngo, on_delete=models.CASCADE, related_name = "ngo_districts")
 	district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True, related_name = "ngo_districts")
 	REACH_CHOICES = ((1000,_('less than 1000 people')), (10000,_('1000 to 10,000 people')), (50000,_('10,000 to 50,000 people')), (100000,_('more than 50,000 people')))
-	population_reach = models.IntegerField(choices=REACH_CHOICES, blank=False, default="")
+	population_reach = models.IntegerField(choices=REACH_CHOICES, blank=False, default=0)
 
 
 class NgoUser(AbstractOrganizationUser):
