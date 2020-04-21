@@ -96,7 +96,7 @@ def ngo_details(request):
 		all_data[state['name']] = {'ngo_count':state['ngo_count'], 'population_reach':0, 'staff_count':staff_count_staff_count, "districts" : []}
 
 
-	districts = District.objects.values('name','state__name').annotate(ngo_count=Count('ngo'), population_reach=Sum('ngodistrict__population_reach'), staff_count=Sum('ngo__staff_count')).order_by('name')
+	districts = District.objects.values('name','state__name').annotate(ngo_count=Count('ngos'), population_reach=Sum('ngo_districts__population_reach'), staff_count=Sum('ngos__staff_count')).order_by('name')
 
 	for district in districts:
 		district_population_reach = 0 if district['population_reach'] is None else district['population_reach']
