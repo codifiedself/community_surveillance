@@ -81,7 +81,26 @@ class DistrictAdmin(admin.ModelAdmin):
 
 
 class NgoDistrictAdmin(admin.ModelAdmin):
+	search_fields = ['ngo__name']
+	list_filter = ['district__name', 'population_reach']
 	list_display = ['ngo', 'district', 'population_reach']
+	actions = ["export_as_csv"]
+
+	def export_as_csv(self, request, queryset):
+		meta = self.model._meta
+		field_names = [field.name for field in meta.fields]
+
+		response = HttpResponse(content_type='text/csv')
+		response['Content-Disposition'] = 'attachment; filename={}.csv'.format(meta)
+		writer = csv.writer(response)
+
+		writer.writerow(field_names)
+		for obj in queryset:
+		    row = writer.writerow([getattr(obj, field) for field in field_names])
+
+		return response
+
+	export_as_csv.short_description = "Export Selected"
 		
 
 
